@@ -10,33 +10,73 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-  <!-- Brevo Script -->
-  <script>
-    (function() {
-      window.sib = {
-        equeue: [],
-        client_key: kw0y035cy1u76wabnnslx7oo // Replace with your Brevo key
-      };
-      window.sendinblue = {};
-      for (var j = ['track', 'identify', 'trackLink', 'page'], i = 0; i < j.length; i++) {
-        (function(k) {
-          window.sendinblue[k] = function() {
-            var arg = Array.prototype.slice.call(arguments);
-            (window.sib[k] || function() {
-              var t = {};
-              t[k] = arg;
-              window.sib.equeue.push(t);
-            })(arg[0], arg[1], arg[2]);
-          };
-        })(j[i]);
-      }
-      var n = document.createElement("script"),
-        i = document.getElementsByTagName("script")[0];
-      n.type = "text/javascript", n.id = "sendinblue-js", n.async = !0,
-        n.src = "https://sibautomation.com/sa.js?key=" + window.sib.client_key,
-        i.parentNode.insertBefore(n, i);
-    })();
-  </script>
+<!-- Brevo Script -->
+<script>
+  (function() {
+    window.sib = {
+      equeue: [],
+      client_key: "kw0y035cy1u76wabnnslx7oo" // Replace with your Brevo key
+    };
+    window.sendinblue = {};
+    for (var j = ['track', 'identify', 'trackLink', 'page'], i = 0; i < j.length; i++) {
+      (function(k) {
+        window.sendinblue[k] = function() {
+          var arg = Array.prototype.slice.call(arguments);
+          (window.sib[k] || function() {
+            var t = {};
+            t[k] = arg;
+            window.sib.equeue.push(t);
+          })(arg[0], arg[1], arg[2]);
+        };
+      })(j[i]);
+    }
+    var n = document.createElement("script"),
+      i = document.getElementsByTagName("script")[0];
+    n.type = "text/javascript", n.id = "sendinblue-js", n.async = !0,
+      n.src = "https://sibautomation.com/sa.js?key=" + window.sib.client_key,
+      i.parentNode.insertBefore(n, i);
+  })();
+</script>
+
+<!-- Newsletter Form Submission Script -->
+<script>
+  document.getElementById("newsletter-form").addEventListener("submit", async function(event) {
+    event.preventDefault(); // Prevent page reload
+
+    let email = document.getElementById("email-input").value; // Get email input value
+
+    const response = await fetch("https://api.brevo.com/v3/contacts", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "api-key": "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"
+      },
+      body: JSON.stringify({
+        email: email,
+        listIds: [9] // Your Brevo List ID
+      })
+    });
+
+    const data = await response.json();
+
+    if (response.ok) {
+      alert("Subscription successful!");
+    } else {
+      alert("Error: " + data.message);
+    }
+  });
+</script>
+
+
+    const data = await response.json();
+    if (response.ok) {
+      alert("Subscription successful!");
+    } else {
+      alert("Error: " + data.message);
+    }
+  });
+</script>
+
 </head>
 <body>
   <!-- Navigation Bar -->
