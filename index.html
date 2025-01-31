@@ -40,42 +40,37 @@
 
 <!-- Newsletter Form Submission Script -->
 <script>
-  document.getElementById("newsletter-form").addEventListener("submit", async function(event) {
-    event.preventDefault(); // Prevent page reload
+  document.addEventListener("DOMContentLoaded", function() {
+    document.getElementById("newsletter-form").addEventListener("submit", async function(event) {
+      event.preventDefault(); // Prevent page reload
 
-    let email = document.getElementById("email-input").value; // Get email input value
+      let email = document.getElementById("email-input").value; // Get email input value
 
-    const response = await fetch("https://api.brevo.com/v3/contacts", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "api-key": "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"
-      },
-      body: JSON.stringify({
-        email: email,
-        listIds: [9] // Your Brevo List ID
-      })
+      const response = await fetch("https://api.brevo.com/v3/contacts", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "accept": "application/json",
+          "api-key": "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"
+        },
+        body: JSON.stringify({
+          email: email,
+          listIds: [9] // Your Brevo List ID
+        })
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        alert("Subscription successful!");
+      } else {
+        alert("Error: " + JSON.stringify(data)); // Better error reporting
+        console.error("Brevo API Error:", data);
+      }
     });
-
-    const data = await response.json();
-
-    if (response.ok) {
-      alert("Subscription successful!");
-    } else {
-      alert("Error: " + data.message);
-    }
   });
 </script>
 
-
-    const data = await response.json();
-    if (response.ok) {
-      alert("Subscription successful!");
-    } else {
-      alert("Error: " + data.message);
-    }
-  });
-</script>
 
 </head>
 <body>
