@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2D Animation Course: From Newbie to Ninja</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="logo.png" type="image/png">
+  <!-- Font Awesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <!-- Brevo Script -->
+  <script>
+    (function() {
+      window.sib = {
+        equeue: [],
+        client_key: "YOUR_BREVO_CLIENT_KEY" // Replace with your Brevo key
+      };
+      window.sendinblue = {};
+      for (var j = ['track', 'identify', 'trackLink', 'page'], i = 0; i < j.length; i++) {
+        (function(k) {
+          window.sendinblue[k] = function() {
+            var arg = Array.prototype.slice.call(arguments);
+            (window.sib[k] || function() {
+              var t = {};
+              t[k] = arg;
+              window.sib.equeue.push(t);
+            })(arg[0], arg[1], arg[2]);
+          };
+        })(j[i]);
+      }
+      var n = document.createElement("script"),
+        i = document.getElementsByTagName("script")[0];
+      n.type = "text/javascript", n.id = "sendinblue-js", n.async = !0,
+        n.src = "https://sibautomation.com/sa.js?key=" + window.sib.client_key,
+        i.parentNode.insertBefore(n, i);
+    })();
+  </script>
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav>
+    <div class="container">
+      <div class="logo">
+        <a href="#pricing">
+          <img src="logo.png" alt="Actual Lawal Logo">
+        </a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about-instructor">About</a></li>
+        <li><a href="#newsletter">Newsletter</a></li> <!-- Changed from Contact Us to Newsletter -->
+      </ul>
+      <div class="mobile-menu-btn">
+        <i class="fas fa-bars"></i>
+      </div>
+    </div>
+    <!-- Mobile Navigation -->
+    <ul class="mobile-nav">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about-instructor">About</a></li>
+      <li><a href="#newsletter">Newsletter</a></li> <!-- Changed from Contact Us to Newsletter -->
+    </ul>
+  </nav>
+
+  <!-- Header Section -->
+  <header id="home">
+    <div class="container">
+      <h1>2D Animation Course: From Newbie to Ninja</h1>
+      <p>Learn 2D Animation from Scratch with Actual Lawal</p>
+      <a href="#pricing" class="cta-button">Enroll Now</a>
+    </div>
+  </header>
+
+  <!-- Course Details Section -->
+  <section id="course-details">
+    <div class="container">
+      <h2>What You'll Learn</h2>
+      <div class="grid">
+        <div>🎨 Intro to 2D Animation</div>
+        <div>🖌️ Character Design</div>
+        <div>🎥 Timing and Workflow</div>
+        <div>💡 Body Mechanics</div>
+        <div>👄 Lip-Sync and Dialogue</div>
+        <div>🚀 Exporting and Publishing</div>
+        <div>🎬 Advanced Camera Techniques</div>
+        <div>📚 Portfolio Building</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Plans Section -->
+  <section id="pricing">
+    <div class="container">
+      <h2>Pricing Plans</h2>
+      <div class="plans">
+        <div class="plan">
+          <h3>Access-Only</h3>
+          <p>₦25,000</p>
+          <ul>
+            <li>Full course access</li>
+            <li>Free software access</li>
+            <li>1-on-1 coaching at ₦30,000/hour</li>
+          </ul>
+          <a href="https://flutterwave.com/pay/lh8m3wuq3uqt" class="cta-button">Enroll Now</a>
+        </div>
+        <div class="plan">
+          <h3>Premium Mentorship</h3>
+          <p>₦150,000</p>
+          <ul>
+            <li>Everything in Access-Only</li>
+            <li>4 hours of 1-on-1 coaching</li>
+            <li>Extended coaching at ₦17,000/hour</li>
+          </ul>
+          <a href="https://flutterwave.com/pay/qsun1dz56ksb" class="cta-button">Enroll Now</a>
+        </div>
+        <div class="plan">
+          <h3>Direct Online Teaching</h3>
+          <p>₦25,000/hour</p>
+          <ul>
+            <li>Direct teaching by Actual Lawal</li>
+            <li>Maximum of 3 hours daily</li>
+          </ul>
+          <a href="https://flutterwave.com/pay/dmc5gfxcg0yt" class="cta-button">Enroll Now</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About the Instructor Section -->
+  <section id="about-instructor">
+    <div class="container">
+      <h2>About the Instructor</h2>
+      <p>Hi, I’m Seidu Lawal (Actual Lawal), a professional animator with over 2 years of experience. I’ve worked on projects for Prune Payments, Cleva, Creed Logistics, and more. My goal is to help you turn your passion for animation into a career!</p>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section id="testimonials">
+    <div class="container">
+      <h2>What Students Are Saying</h2>
+      <div class="testimonial-grid">
+        <div class="testimonial">
+          <div class="testimonial-icon">
+            <i class="fas fa-user"></i>
+          </div>
+          <p>"The Premium Mentorship plan was a game-changer! Actual Lawal’s personalized feedback helped me improve so quickly. I can’t recommend it enough!" - <strong>Chinedu O.</strong></p>
+        </div>
+        <div class="testimonial">
+          <div class="testimonial-icon">
+            <i class="fas fa-user"></i>
+          </div>
+          <p>"I chose the Premium plan, and it was worth every kobo. The 1-on-1 sessions were incredibly insightful. Actual Lawal is a fantastic mentor!" - <strong>Amina S.</strong></p>
+        </div>
+        <div class="testimonial">
+          <div class="testimonial-icon">
+            <i class="fas fa-user"></i>
+          </div>
+          <p>"I learned so much from this course! The tips on character design and workflow have completely changed my approach to animation." - <strong>Tunde K.</strong></p>
+        </div>
+        <div class="testimonial">
+          <div class="testimonial-icon">
+            <i class="fas fa-user"></i>
+          </div>
+          <p>"I got everything I needed to jumpstart my animation career. Worth every naira!" - <strong>Mary J.</strong></p>
+        </div>
+        <div class="testimonial">
+          <div class="testimonial-icon">
+            <i class="fas fa-user"></i>
+          </div>
+          <p>"The Premium plan gave me the confidence to create my own animations. Actual Lawal’s guidance was invaluable!" - <strong>Emeka T.</strong></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section id="faq">
+    <div class="container">
+      <h2>FAQ</h2>
+      <div class="faq-grid">
+        <div class="faq-item">
+          <div class="faq-question">
+            <h3>Q: Do I need prior animation experience to join this course?</h3>
+            <span class="toggle-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>A: No, this course is designed for beginners and intermediate learners. We’ll start from the basics and gradually move to advanced topics.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">
+            <h3>Q: What software will I need for the course?</h3>
+            <span class="toggle-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>A: You’ll get free access to all the paid software required for the course. No additional costs!</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">
+            <h3>Q: Can I learn at my own pace?</h3>
+            <span class="toggle-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>A: Yes, the course is self-paced. You can complete it in as little as a month or take longer if needed.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">
+            <h3>Q: How do I book a 1-on-1 session with Actual Lawal?</h3>
+            <span class="toggle-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>A: Contact me on WhatsApp to schedule your session after payment.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">
+            <h3>Q: What if I have questions during the course?</h3>
+            <span class="toggle-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>A: You can reach out to me via the contact form or WhatsApp for support.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter Section -->
+  <section id="newsletter">
+    <div class="container">
+      <h2>Join My Newsletter</h2>
+      <p>Get animation tips, course updates, and exclusive offers straight to your inbox!</p>
+      <form class="brevo-form">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <input type="tel" name="phone" placeholder="Your Phone (Optional)">
+        <button type="submit" class="cta-button">Subscribe</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Actual Lawal. All rights reserved.</p>
+      <div class="social-links">
+        <a href="https://facebook.com/actuallawal" target="_blank"><i class="fab fa-facebook"></i></a>
+        <a href="https://twitter.com/actuallawal" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="https://instagram.com/actuallawal" target="_blank"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll to Top Button -->
+  <div class="scroll-to-top">
+    <i class="fas fa-arrow-up"></i>
+  </div>
+
+  <!-- JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>
