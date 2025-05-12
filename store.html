@@ -1,228 +1,135 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Actual Lawal Shop</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="icon" type="image/png" href="favicon.png" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <style>
-    body {
-      margin: 0;
-      background-color: #111;
-      color: #fff;
-      font-family: 'Arial', sans-serif;
-    }
-
-    header {
-      background-color: #000;
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .logo img {
-      max-width: 120px;
-      height: auto;
-    }
-
-    nav ul {
-      display: flex;
-      gap: 1.5rem;
-      list-style: none;
-      margin: 0;
-      padding: 0;
-    }
-
-    nav ul li a {
-      color: #fff;
-      text-decoration: none;
-      font-weight: 500;
-    }
-
-    .donate-btn {
-      background: #ffc107;
-      color: #000;
-      padding: 0.5rem 1rem;
-      border-radius: 6px;
-      font-weight: bold;
-      text-decoration: none;
-    }
-
-    .store-container {
-      max-width: 1200px;
-      margin: auto;
-      padding: 2rem;
-      text-align: center;
-    }
-
-    .store-container h1 {
-      font-size: 2.5rem;
-      margin-bottom: 2rem;
-    }
-
-    .products {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem;
-    }
-
-    .product-card {
-      background: #1a1a1a;
-      padding: 1rem;
-      border-radius: 12px;
-      border: 1px solid #333;
-      transition: transform 0.3s;
-    }
-
-    .product-card:hover {
-      transform: scale(1.03);
-    }
-
-    .product-card img {
-      width: 100%;
-      border-radius: 8px;
-    }
-
-    .product-card h3 {
-      font-size: 1.1rem;
-      margin: 1rem 0 0.5rem;
-    }
-
-    .price-old {
-      text-decoration: line-through;
-      color: #888;
-    }
-
-    .price-new {
-      color: #00ff90;
-      font-weight: bold;
-    }
-
-    .buy-button {
-      margin-top: 1rem;
-      display: inline-block;
-      background: #ffc107;
-      color: #000;
-      padding: 0.5rem 1rem;
-      border-radius: 6px;
-      font-weight: bold;
-      text-decoration: none;
-    }
-
-    .social-links {
-      text-align: center;
-      margin-top: 3rem;
-      margin-bottom: 1rem;
-    }
-
-    .social-links a {
-      color: #ffc107;
-      margin: 0 0.75rem;
-      font-size: 1.5rem;
-      transition: color 0.3s;
-    }
-
-    .social-links a:hover {
-      color: #fff;
-    }
-
-    footer {
-      margin-top: 4rem;
-      background: #000;
-      text-align: center;
-      padding: 2rem;
-      font-size: 0.9rem;
-      color: #bbb;
-    }
-
-    @media (max-width: 600px) {
-      nav ul {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="store.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
-
   <!-- Header -->
   <header>
     <div class="logo">
-      <a href="/"><img src="logo.png" alt="Actual Lawal Logo"></a>
+      <a href="/" aria-label="Actual Lawal Home">
+        <img src="logo.png" alt="Actual Lawal Logo" width="120" height="auto">
+      </a>
     </div>
-    <nav>
+    
+    <nav aria-label="Main navigation">
       <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/#about">About</a></li>
-        <li><a href="/shop.html">Shop</a></li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about-instructor">About</a></li>
+        <li><a href="store.html">Shop</a></li>
       </ul>
     </nav>
-    <a href="/support.html" class="donate-btn">Show Love</a>
+    
+    <a href="https://flutterwave.com/pay/iqhcmsshqasz" class="btn btn-primary donate-btn">Show Love</a>
   </header>
 
-  <!-- Store Content -->
-  <main class="store-container">
-    <h1>🛒 Shop My Merch</h1>
+  <!-- Main Content -->
+  <main class="main-content">
+    <div class="store-container">
+      <h1>🛒 Lawal Merch</h1>
+      
+      <section class="products" aria-label="Product listings">
+        <!-- Product 1 -->
+        <article class="product-card">
+          <div class="product-image-container">
+            <img 
+              src="images/black.jpg" 
+              alt="Motorcycle Cartoon Phone Case - Black"
+              loading="lazy"
+              class="product-image">
+          </div>
+          
+          <h3>Motorcycle Cartoon Phone Case</h3>
+          
+          <div class="price-container">
+            <span class="price-old">$43</span>
+            <span class="price-new">$1.32</span>
+          </div>
+          
+          <div class="form-group">
+            <label for="color1">Color</label>
+            <select id="color1" class="color-select">
+              <option value="black">Black</option>
+              <option value="white">White</option>
+              <option value="lightgreen">Light Green</option>
+            </select>
+          </div>
+          
+          <button class="btn btn-primary buy-button">
+            Buy Now
+          </button>
+        </article>
 
-    <section class="products">
-      <!-- Product 1 -->
-      <div class="product-card">
-        <img 
-          src="https://images.printify.com/mockup/68192a7cb03bb3ed0c02d91b/62583/97519/chic-tough-phone-cases-with-motorcycle-design-cartoon-phone-covers-unique-gifts-for-bikers-fun-phone-accessories-tech-gifts-everyday.jpg" 
-          alt="Motorcycle Cartoon Phone Case" />
-        <h3>Motorcycle Cartoon Phone Case</h3>
-        <p>
-          <span class="price-old">$43</span>
-          <span class="price-new">$23.32</span>
-        </p>
-        <a href="https://printify.com/app/product-details/68192a7cb03bb3ed0c02d91b?fromProductsPage=1" class="buy-button" target="_blank">Buy Now</a>
-      </div>
-
-      <!-- Product 2 -->
-      <div class="product-card">
-        <img 
-          src="https://images.printify.com/mockup/6819254ea45b9bdf450587ca/68549/8303/funny-cartoon-expression-unisex-tank-cool-graphic-tees-casual-summer-tops-gift-for-friends-beach-wear-humor-apparel.jpg" 
-          alt="Funny Cartoon Tank Top" />
-        <h3>Funny Cartoon Tank Top</h3>
-        <p>
-          <span class="price-old">$60</span>
-          <span class="price-new">$33.37</span>
-        </p>
-        <a href="https://printify.com/app/product-details/6819254ea45b9bdf450587ca?fromProductsPage=1" class="buy-button" target="_blank">Buy Now</a>
-      </div>
-
-      <!-- Product 3 -->
-      <div class="product-card">
-        <img 
-          src="https://images.printify.com/mockup/6646025d9afc90105f0e90dc/34099/101002/unisex-college-hoodie.jpg?camera_label=front&s=320&t=1746479655535&use_cdn_redirect=true" 
-          alt="Funny Cartoon Tank Top" />
-        <h3>Unisex College Hoodie</h3>
-        <p>
-          <span class="price-old">$54</span>
-          <span class="price-new">$35.79</span>
-        </p>
-        <a href="https://printify.com/app/product-details/6646025d9afc90105f0e90dc?fromProductsPage=1" class="buy-button" target="_blank">Buy Now</a>
-      </div>
-
-    </section>
-  </main>
-
-  <!-- Social Links (with Icons) -->
-  <div class="social-links">
-    <a href="https://facebook.com/ActualLawal" target="_blank"><i class="fab fa-facebook-f"></i></a>
-    <a href="https://instagram.com/actuallawal" target="_blank"><i class="fab fa-instagram"></i></a>
-    <a href="https://tiktok.com/@actuallawal" target="_blank"><i class="fab fa-tiktok"></i></a>
-    <a href="https://youtube.com/@ActualLawal" target="_blank"><i class="fab fa-youtube"></i></a>
+       <!-- Product 2 -->
+<article class="product-card">
+  <div class="product-image-container">
+    <img 
+      src="images2/white.jpg" 
+      alt="Funny Cartoon Tank Top - White"
+      loading="lazy"
+      class="product-image"
+      id="product2-image">
   </div>
+  
+  <h3>Funny Cartoon Tank Top</h3>
+  
+  <div class="price-container">
+    <span class="price-old">$60</span>
+    <span class="price-new">$1.37</span>
+  </div>
+  
+  <div class="form-group">
+    <label for="color2">Color</label>
+    <select id="color2" class="color-select">
+      <option value="white">White</option>
+      <option value="black">Black</option>
+      <option value="autumn">Autumn</option>
+      <option value="army">Army</option>
+    </select>
+  </div>
+  
+  <button class="btn btn-primary buy-button">
+    Buy Now
+  </button>
+</article>
 
+
+      </section>
+    </div>
+  </main>
+  
   <!-- Footer -->
   <footer>
-    &copy; 2025 Actual Lawal. All rights reserved. <br>
-    Built with love for fans worldwide 🌍.
+    <div class="footer-content">
+      <div class="social-links-container">
+        <h3>Connect With Me</h3>
+        <div class="social-links">
+          <a href="https://facebook.com/ActualLawal" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="https://instagram.com/actuallawal" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="https://tiktok.com/@actuallawal" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+            <i class="fab fa-tiktok"></i>
+          </a>
+          <a href="https://youtube.com/@ActualLawal" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+            <i class="fab fa-youtube"></i>
+          </a>
+        </div>
+      </div>
+      <div class="copyright">
+        <p>&copy; 2025 Actual Lawal. All rights reserved.</p>
+        <p>Built with love for fans worldwide 🌍.</p>
+      </div>
+    </div>
   </footer>
 
+  <script src="store.js"></script>
 </body>
 </html>
