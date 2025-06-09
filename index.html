@@ -852,6 +852,7 @@
       });
       handler.openIframe();
     }
+    
     // Payment Modal Functions
     let currentPlanAmount = 0;
     let currentPlanName = '';
@@ -879,6 +880,12 @@
       const email = document.getElementById('customerEmail').value;
       const phone = document.getElementById('customerPhone').value;
       
+      // Validate email first
+      if (!validateEmail(email)) {
+        alert("Please enter a valid email address");
+        return;
+      }
+      
       // Show loading spinner
       document.getElementById('paymentSpinner').style.display = 'block';
       
@@ -886,10 +893,11 @@
       payWithPaystack(currentPlanAmount, currentPlanName, email, name, phone);
     });
 
-    // Paystack Integration
+    // SINGLE UPDATED Paystack Integration Function
     function payWithPaystack(amount, planName, email, name, phone) {
+      // Use your LIVE key (ensure it's correct)
       const handler = PaystackPop.setup({
-        key: 'pk_test_your_paystack_public_key', // Replace with your Paystack public key
+        key: 'pk_live_bab837f46c02f8acfd170f322780645bd132f5fe',
         email: email,
         amount: amount,
         currency: 'NGN',
@@ -922,16 +930,25 @@
           
           // Handle successful payment
           alert('Payment complete! Reference: ' + response.reference);
-          // You can redirect to a success page or show a success message
           window.location.href = 'success.html?reference=' + response.reference;
         },
         onClose: function() {
-          // Hide spinner if user closes payment modal
           document.getElementById('paymentSpinner').style.display = 'none';
           alert('Payment window closed.');
+        },
+        onError: function(error) {
+          document.getElementById('paymentSpinner').style.display = 'none';
+          alert("Payment error: " + error.message);
+          console.error("Paystack Error:", error);
         }
       });
+      
       handler.openIframe();
+    }
+
+    function validateEmail(email) {
+      const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      return re.test(email);
     }
 
     // Close modal if clicked outside
