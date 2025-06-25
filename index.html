@@ -8,14 +8,26 @@
   <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700&family=Chewy&family=Fredoka+One&display=swap" rel="stylesheet">
   <script src="https://js.paystack.co/v1/inline.js"></script>
   <style>
+    /* Color Palette */
+    :root {
+      --gold-light: #DBB12A;
+      --gold: #AE8B0F;
+      --gold-dark: #734B1A;
+      --brown-dark: #30250B;
+      --brown-darker: #150E03;
+      --text-light: #f8f8f8;
+      --text-dark: #333;
+      --bg-light: #f9f9f9;
+    }
+
     /* General Styles */
     body {
       font-family: 'Baloo 2', cursive;
       margin: 0;
       padding: 0;
       line-height: 1.6;
-      color: #333;
-      background-color: #f9f9f9;
+      color: var(--text-dark);
+      background-color: var(--bg-light);
     }
 
     .container {
@@ -26,12 +38,11 @@
 
     /* Navigation Bar */
     nav {
-      background: #ffffff;
+      background: var(--brown-darker);
       padding: 15px 0;
       position: sticky;
       top: 0;
       z-index: 1000;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     }
 
     nav .container {
@@ -54,34 +65,33 @@
     }
 
     .nav-links a {
-      color: #333;
+      color: var(--text-light);
       text-decoration: none;
       font-weight: 500;
       transition: color 0.3s ease;
     }
 
     .nav-links a:hover {
-      color: #ffc107;
+      color: var(--gold-light);
     }
 
     /* Mobile Navigation */
     .mobile-menu-btn {
       display: none;
-      color: #333;
+      color: var(--text-light);
       font-size: 1.5rem;
       cursor: pointer;
     }
 
     .mobile-nav {
       display: none;
-      background: #ffffff;
+      background: var(--brown-darker);
       padding: 10px 0;
       position: absolute;
       width: 100%;
       top: 60px;
       left: 0;
       z-index: 999;
-      box-shadow: 0 5px 10px rgba(0,0,0,0.1);
     }
 
     .mobile-nav.active {
@@ -89,22 +99,17 @@
     }
 
     .mobile-nav a {
-      color: #333;
+      color: var(--text-light);
       text-decoration: none;
       display: block;
       padding: 10px 20px;
       text-align: center;
-      transition: background 0.3s ease;
-    }
-
-    .mobile-nav a:hover {
-      background: #f5f5f5;
     }
 
     /* Header Section */
     header {
-      background: linear-gradient(135deg, #ffc107, #e0a800);
-      color: #333;
+      background: linear-gradient(135deg, var(--gold-light), var(--gold));
+      color: var(--brown-darker);
       padding: 80px 0;
       text-align: center;
     }
@@ -112,7 +117,7 @@
     header h1 {
       font-size: 2.8rem;
       margin-bottom: 10px;
-      color: #333;
+      color: var(--brown-darker);
       text-shadow: 1px 1px 3px rgba(255,255,255,0.3);
     }
 
@@ -123,8 +128,8 @@
     }
 
     .cta-button {
-      background: #fff;
-      color: #333;
+      background: var(--brown-darker);
+      color: var(--gold-light);
       padding: 12px 25px;
       border-radius: 5px;
       font-weight: 600;
@@ -135,7 +140,7 @@
     }
 
     .cta-button:hover {
-      background: #f5f5f5;
+      background: var(--brown-dark);
       transform: translateY(-2px);
       box-shadow: 0 5px 15px rgba(0,0,0,0.2);
     }
@@ -150,7 +155,7 @@
       text-align: center;
       margin-bottom: 20px;
       font-size: 2.2rem;
-      color: #ffc107;
+      color: var(--gold);
     }
 
     .grid {
@@ -165,103 +170,29 @@
       border-radius: 5px;
       text-align: center;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
-      color: #333;
+      color: var(--text-dark);
       box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      border: 1px solid var(--gold-light);
     }
 
     .grid div:hover {
       transform: scale(1.05);
       box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      background: var(--gold-light);
+      color: var(--brown-darker);
     }
 
     /* Pricing Plans Section */
-
-    /* Big Buttons */
-.big-button {
-  display: block;
-  width: 100%;
-  padding: 16px;
-  font-size: 1.1rem;
-  font-weight: bold;
-  border-radius: 8px;
-  border: none;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  margin-top: 20px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-.big-button.primary {
-  background: #27ae60;
-  color: white;
-  box-shadow: 0 4px 15px rgba(39, 174, 96, 0.3);
-}
-
-.big-button.primary:hover {
-  background: #219653;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(39, 174, 96, 0.4);
-}
-
-.big-button:not(.primary) {
-  background: #ffc107;
-  color: #333;
-  box-shadow: 0 4px 15px rgba(255, 193, 7, 0.3);
-}
-
-.big-button:not(.primary):hover {
-  background: #e0a800;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(255, 193, 7, 0.4);
-}
-
-/* Popular Tag */
-.popular-tag {
-  position: absolute;
-  top: -12px;
-  right: 20px;
-  background: #27ae60;
-  color: white;
-  padding: 5px 15px;
-  border-radius: 20px;
-  font-size: 0.8rem;
-  font-weight: bold;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-}
-
-.plan.popular {
-  position: relative;
-  border: 2px solid #27ae60;
-  transform: scale(1.02);
-}
-
-    .old-price {
-  text-decoration: line-through;
-  color: #999;
-  margin-right: 10px;
-}
-.new-price {
-  font-weight: bold;
-  color: #27ae60;
-}
-.plan.popular {
-  border: 2px solid #27ae60;
-}
-button.primary {
-  background: #27ae60;
-  color: white;
-}
     #pricing {
       padding: 60px 0;
-      background: #f5f5f5;
+      background: var(--bg-light);
     }
 
     #pricing h2 {
       text-align: center;
       margin-bottom: 20px;
       font-size: 2.2rem;
-      color: #ffc107;
+      color: var(--gold);
     }
 
     .plans {
@@ -278,8 +209,9 @@ button.primary {
       text-align: center;
       flex: 1 1 300px;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
-      color: #333;
+      color: var(--text-dark);
       box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      border: 1px solid var(--gold);
     }
 
     .plan:hover {
@@ -290,7 +222,7 @@ button.primary {
     .plan h3 {
       font-size: 1.5rem;
       margin-bottom: 10px;
-      color: #ffc107;
+      color: var(--gold-dark);
     }
 
     h1, h2, h3 {
@@ -299,7 +231,7 @@ button.primary {
 
     .plan p {
       font-size: 1.2rem;
-      color: #ffc107;
+      color: var(--gold);
       margin-bottom: 20px;
     }
 
@@ -312,9 +244,74 @@ button.primary {
       margin: 10px 0;
     }
 
-    /* For buttons to stand out */
-    .cta-button, .paystack-button {
-      font-family: 'Fredoka One', cursive;
+    /* Big Buttons */
+    .big-button {
+      display: block;
+      width: 100%;
+      padding: 16px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      margin-top: 20px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .big-button.primary {
+      background: var(--gold-dark);
+      color: white;
+      box-shadow: 0 4px 15px rgba(115, 75, 26, 0.3);
+    }
+
+    .big-button.primary:hover {
+      background: var(--brown-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(115, 75, 26, 0.4);
+    }
+
+    .big-button:not(.primary) {
+      background: var(--gold-light);
+      color: var(--brown-darker);
+      box-shadow: 0 4px 15px rgba(219, 177, 42, 0.3);
+    }
+
+    .big-button:not(.primary):hover {
+      background: var(--gold);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(219, 177, 42, 0.4);
+    }
+
+    /* Popular Tag */
+    .popular-tag {
+      position: absolute;
+      top: -12px;
+      right: 20px;
+      background: var(--gold-dark);
+      color: white;
+      padding: 5px 15px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: bold;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    .plan.popular {
+      position: relative;
+      border: 2px solid var(--gold-dark);
+      transform: scale(1.02);
+    }
+
+    .old-price {
+      text-decoration: line-through;
+      color: #999;
+      margin-right: 10px;
+    }
+    .new-price {
+      font-weight: bold;
+      color: var(--gold-dark);
     }
 
     /* About the Instructor Section */
@@ -327,7 +324,7 @@ button.primary {
       text-align: center;
       margin-bottom: 20px;
       font-size: 2.2rem;
-      color: #ffc107;
+      color: var(--gold);
     }
 
     #about-instructor p {
@@ -339,14 +336,14 @@ button.primary {
     /* Testimonials Section */
     #testimonials {
       padding: 60px 0;
-      background: #f5f5f5;
+      background: var(--bg-light);
     }
 
     #testimonials h2 {
       text-align: center;
       margin-bottom: 20px;
       font-size: 2.2rem;
-      color: #ffc107;
+      color: var(--gold);
     }
 
     .testimonial-grid {
@@ -361,8 +358,9 @@ button.primary {
       border-radius: 5px;
       text-align: center;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
-      color: #333;
+      color: var(--text-dark);
       box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      border: 1px solid var(--gold-light);
     }
 
     .testimonial:hover {
@@ -373,7 +371,7 @@ button.primary {
     .testimonial-icon {
       font-size: 2rem;
       margin-bottom: 10px;
-      color: #ffc107;
+      color: var(--gold);
     }
 
     /* FAQ Section */
@@ -386,7 +384,7 @@ button.primary {
       text-align: center;
       margin-bottom: 20px;
       font-size: 2.2rem;
-      color: #ffc107;
+      color: var(--gold);
     }
 
     .faq-grid {
@@ -399,12 +397,14 @@ button.primary {
       background: #f5f5f5;
       padding: 15px;
       border-radius: 5px;
-      color: #333;
+      color: var(--text-dark);
       transition: all 0.3s ease;
+      border: 1px solid var(--gold-light);
     }
 
     .faq-item:hover {
-      background: #eee;
+      background: var(--gold-light);
+      color: var(--brown-darker);
     }
 
     .faq-question {
@@ -422,7 +422,7 @@ button.primary {
     .toggle-icon {
       font-size: 1.5rem;
       font-weight: bold;
-      color: #ffc107;
+      color: var(--gold);
     }
 
     .faq-answer {
@@ -440,15 +440,15 @@ button.primary {
 
     /* Footer Section */
     footer {
-      background: #333;
-      color: #fff;
+      background: var(--brown-darker);
+      color: var(--gold-light);
       text-align: center;
       padding: 20px 0;
       margin-top: 40px;
     }
 
     .social-links a {
-      color: #ffc107;
+      color: var(--gold-light);
       margin: 0 10px;
       font-size: 1.5rem;
       text-decoration: none;
@@ -456,7 +456,7 @@ button.primary {
     }
 
     .social-links a:hover {
-      color: #e0a800;
+      color: var(--gold);
     }
 
     /* Scroll to Top Button */
@@ -465,8 +465,8 @@ button.primary {
       position: fixed;
       bottom: 20px;
       right: 20px;
-      background: #ffc107;
-      color: #333;
+      background: var(--gold);
+      color: var(--brown-darker);
       padding: 10px;
       border-radius: 50%;
       cursor: pointer;
@@ -475,7 +475,7 @@ button.primary {
     }
 
     .scroll-to-top:hover {
-      background: #e0a800;
+      background: var(--gold-light);
     }
 
     /* Modal Styles */
@@ -512,11 +512,11 @@ button.primary {
     }
 
     .close-modal:hover {
-      color: #ffc107;
+      color: var(--gold);
     }
 
     .modal h3 {
-      color: #ffc107;
+      color: var(--gold);
       margin-bottom: 20px;
       text-align: center;
     }
@@ -537,13 +537,13 @@ button.primary {
       border: 1px solid #ddd;
       border-radius: 5px;
       background: #fff;
-      color: #333;
+      color: var(--text-dark);
       font-size: 1rem;
     }
 
     .form-group input:focus {
       outline: none;
-      border-color: #ffc107;
+      border-color: var(--gold);
     }
 
     .modal-buttons {
@@ -572,9 +572,9 @@ button.primary {
       width: 40px;
       height: 40px;
       margin: 20px auto;
-      border: 4px solid rgba(255, 193, 7, 0.3);
+      border: 4px solid rgba(219, 177, 42, 0.3);
       border-radius: 50%;
-      border-top: 4px solid #ffc107;
+      border-top: 4px solid var(--gold);
       animation: spin 1s linear infinite;
     }
 
@@ -604,7 +604,7 @@ button.primary {
 
     /* Paystack Button */
     .paystack-button {
-      background: #0ab579;
+      background: var(--gold-dark);
       color: white;
       padding: 12px 25px;
       border: none;
@@ -618,7 +618,7 @@ button.primary {
     }
 
     .paystack-button:hover {
-      background: #089e6e;
+      background: var(--brown-dark);
       transform: translateY(-2px);
       box-shadow: 0 5px 15px rgba(0,0,0,0.2);
     }
@@ -681,70 +681,68 @@ button.primary {
       </div>
     </div>
   </section>
-  
 
- <!-- 💰 Pricing Plans -->
-<section id="pricing">
-  <div class="container">
-    <h2>Choose Your Plan</h2>
-    
-    <div class="plans">
-      <!-- 🎯 Basic Plan -->
-      <div class="plan">
-        <h3>Starter</h3>
-        <p class="price">
-          <span class="old-price">₦100,000</span>
-          <span class="new-price">₦49,999</span>
-        </p>
-        <ul>
-          <li>🔓 Full course access</li>
-          <li>💻 Software included</li>
-          <li>📱 WhatsApp support</li>
-          <li>🎓 Extra coaching: ₦15k/30min</li>
-        </ul>
-        <button class="big-button" onclick="showPaymentModal(4999900, 'Starter Plan')">
-          Get Started Now
-        </button>
-      </div>
+  <!-- Pricing Plans Section -->
+  <section id="pricing">
+    <div class="container">
+      <h2>Choose Your Plan</h2>
+      
+      <div class="plans">
+        <!-- Starter Plan -->
+        <div class="plan">
+          <h3>Starter</h3>
+          <p class="price">
+            <span class="old-price">₦100,000</span>
+            <span class="new-price">₦49,999</span>
+          </p>
+          <ul>
+            <li>🔓 Full course access</li>
+            <li>💻 Software included</li>
+            <li>📱 WhatsApp support</li>
+            <li>🎓 Extra coaching: ₦15k/30min</li>
+          </ul>
+          <button class="big-button" onclick="showPaymentModal(4999900, 'Starter Plan')">
+            Get Started Now
+          </button>
+        </div>
 
-      <!-- ⭐ Premium Plan -->
-      <div class="plan popular">
-        <div class="popular-tag">BEST VALUE</div>
-        <h3>Elite</h3>
-        <p class="price">
-          <span class="old-price">₦150,000</span>
-          <span class="new-price">₦74,999</span>
-        </p>
-        <ul>
-          <li>🚀 Everything in Starter</li>
-          <li>👨‍🏫 Free 1-hour session</li>
-          <li>⚡ Cheaper coaching: ₦10k/30min</li>
-        </ul>
-        <button class="big-button primary" onclick="showPaymentModal(7499900, 'Elite Plan')">
-          Join Elite Program
-        </button>
+        <!-- Elite Plan -->
+        <div class="plan popular">
+          <div class="popular-tag">BEST VALUE</div>
+          <h3>Elite</h3>
+          <p class="price">
+            <span class="old-price">₦150,000</span>
+            <span class="new-price">₦74,999</span>
+          </p>
+          <ul>
+            <li>🚀 Everything in Starter</li>
+            <li>👨‍🏫 Free 1-hour session</li>
+            <li>⚡ Cheaper coaching: ₦10k/30min</li>
+          </ul>
+          <button class="big-button primary" onclick="showPaymentModal(7499900, 'Elite Plan')">
+            Join Elite Program
+          </button>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- About the Instructor Section -->
+  <!-- About the Instructor Section -->
   <section id="about-instructor">
     <div class="container">
       <h2>About the Instructor</h2>
-<p>
-  Hi, I'm <strong>Seidu Lawal</strong> — popularly known online as <strong>Actual Lawal</strong>. I'm a professional 2D animator and comedy content creator with over 2 years of hands-on experience in creating viral, engaging, and educational animated content.  
-</p>
-<p>
-  My animations have powered campaigns and stories for top brands like <strong>Prune Payments</strong>, <strong>Cleva</strong>, <strong>Creed Logistics</strong>, and more. With a growing audience of thousands across platforms like TikTok, Instagram, and Facebook, I understand what it takes to make content that connects, entertains, and educates.
-</p>
-<p>
-  This course is built for anyone who wants to turn their love for animation into a serious skill — even if you're starting from scratch. I'll walk you through every step using simple explanations, real-life examples, and practical assignments you can follow.
-</p>
-<p>
-  Whether you want to create skits, work with clients, or launch your own animated series — this course is your starting point. Let’s bring your ideas to life, one frame at a time! 🎬🔥
-</p>
-
+      <p>
+        Hi, I'm <strong>Seidu Lawal</strong> — popularly known online as <strong>Actual Lawal</strong>. I'm a professional 2D animator and comedy content creator with over 2 years of hands-on experience in creating viral, engaging, and educational animated content.  
+      </p>
+      <p>
+        My animations have powered campaigns and stories for top brands like <strong>Prune Payments</strong>, <strong>Cleva</strong>, <strong>Creed Logistics</strong>, and more. With a growing audience of thousands across platforms like TikTok, Instagram, and Facebook, I understand what it takes to make content that connects, entertains, and educates.
+      </p>
+      <p>
+        This course is built for anyone who wants to turn their love for animation into a serious skill — even if you're starting from scratch. I'll walk you through every step using simple explanations, real-life examples, and practical assignments you can follow.
+      </p>
+      <p>
+        Whether you want to create skits, work with clients, or launch your own animated series — this course is your starting point. Let's bring your ideas to life, one frame at a time! 🎬🔥
+      </p>
     </div>
   </section>
 
