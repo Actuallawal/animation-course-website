@@ -175,6 +175,23 @@
     }
 
     /* Pricing Plans Section */
+
+    .old-price {
+  text-decoration: line-through;
+  color: #999;
+  margin-right: 10px;
+}
+.new-price {
+  font-weight: bold;
+  color: #27ae60;
+}
+.plan.popular {
+  border: 2px solid #27ae60;
+}
+button.primary {
+  background: #27ae60;
+  color: white;
+}
     #pricing {
       padding: 60px 0;
       background: #f5f5f5;
@@ -604,54 +621,49 @@
       </div>
     </div>
   </section>
+  
 
-  <!-- 💰 Premium Pricing Plans Section -->
+ <!-- 💰 Pricing Plans -->
 <section id="pricing">
   <div class="container">
-    <h2>📊 Investment Plans</h2>
-    <p class="section-subtitle">Choose the perfect plan to elevate your skills and accelerate your success</p>
+    <h2>Choose Your Plan</h2>
     
     <div class="plans">
-      <!-- 🎯 Access-Only Plan -->
+      <!-- 🎯 Basic Plan -->
       <div class="plan">
-        <h3>🚀 Starter Access</h3>
+        <h3>Starter</h3>
         <p class="price">
-          <span class="original-price">₦100,000</span>
-          <span class="discounted-price">₦49,999</span>
+          <span class="old-price">₦100,000</span>
+          <span class="new-price">₦49,999</span>
         </p>
         <ul>
-          <li>🔓 Unlimited course access</li>
-          <li>💻 Exclusive software tools</li>
-          <li>📱 Direct WhatsApp support</li>
-          <li>🎓 Premium coaching sessions at ₦15,000/30min</li>
+          <li>🔓 Full course access</li>
+          <li>💻 Software included</li>
+          <li>📱 WhatsApp support</li>
+          <li>🎓 Extra coaching: ₦15k/30min</li>
         </ul>
-        <button class="cta-button" onclick="showPaymentModal(4999900, 'Starter Access Plan')">
-          Get Started Now
+        <button onclick="showPaymentModal(4999900, 'Starter Plan')">
+          Get Started
         </button>
       </div>
 
-      <!-- ⭐ Premium Mentorship Plan -->
-      <div class="plan highlighted">
-        <div class="popular-badge">MOST POPULAR</div>
-        <h3>✨ Elite Mentorship</h3>
+      <!-- ⭐ Premium Plan -->
+      <div class="plan popular">
+        <h3>Elite</h3>
         <p class="price">
-          <span class="original-price">₦150,000</span>
-          <span class="discounted-price">₦74,999</span>
+          <span class="old-price">₦150,000</span>
+          <span class="new-price">₦74,999</span>
         </p>
         <ul>
-          <li>🎯 Comprehensive course access</li>
-          <li>🛠️ Advanced software suite</li>
-          <li>📞 Priority WhatsApp communication</li>
-          <li>👨‍🏫 <strong>FREE</strong> 1-hour 1-on-1 strategy session</li>
-          <li>⚡ Discounted coaching at ₦10,000/30min</li>
+          <li>🚀 Everything in Starter</li>
+          <li>👨‍🏫 Free 1-hour session</li>
+          <li>⚡ Cheaper coaching: ₦10k/30min</li>
         </ul>
-        <button class="cta-button primary" onclick="showPaymentModal(7499900, 'Elite Mentorship Plan')">
-          Join Elite Program
+        <button class="primary" onclick="showPaymentModal(7499900, 'Elite Plan')">
+          Join Now
         </button>
       </div>
     </div>
-
-    <p class="guarantee-note">🔒 100% Satisfaction Guarantee | 💳 Secure Payment Processing</p>
   </div>
 </section>
 
