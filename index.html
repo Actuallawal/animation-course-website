@@ -176,6 +176,66 @@
 
     /* Pricing Plans Section */
 
+    /* Big Buttons */
+.big-button {
+  display: block;
+  width: 100%;
+  padding: 16px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.big-button.primary {
+  background: #27ae60;
+  color: white;
+  box-shadow: 0 4px 15px rgba(39, 174, 96, 0.3);
+}
+
+.big-button.primary:hover {
+  background: #219653;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(39, 174, 96, 0.4);
+}
+
+.big-button:not(.primary) {
+  background: #ffc107;
+  color: #333;
+  box-shadow: 0 4px 15px rgba(255, 193, 7, 0.3);
+}
+
+.big-button:not(.primary):hover {
+  background: #e0a800;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 193, 7, 0.4);
+}
+
+/* Popular Tag */
+.popular-tag {
+  position: absolute;
+  top: -12px;
+  right: 20px;
+  background: #27ae60;
+  color: white;
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.plan.popular {
+  position: relative;
+  border: 2px solid #27ae60;
+  transform: scale(1.02);
+}
+
     .old-price {
   text-decoration: line-through;
   color: #999;
@@ -188,10 +248,10 @@
 .plan.popular {
   border: 2px solid #27ae60;
 }
-/* button.primary {
+button.primary {
   background: #27ae60;
   color: white;
-} */
+}
     #pricing {
       padding: 60px 0;
       background: #f5f5f5;
@@ -642,13 +702,14 @@
           <li>📱 WhatsApp support</li>
           <li>🎓 Extra coaching: ₦15k/30min</li>
         </ul>
-        <button onclick="showPaymentModal(4999900, 'Starter Plan')">
-          Get Started
+        <button class="big-button" onclick="showPaymentModal(4999900, 'Starter Plan')">
+          Get Started Now
         </button>
       </div>
 
       <!-- ⭐ Premium Plan -->
       <div class="plan popular">
+        <div class="popular-tag">BEST VALUE</div>
         <h3>Elite</h3>
         <p class="price">
           <span class="old-price">₦150,000</span>
@@ -659,67 +720,13 @@
           <li>👨‍🏫 Free 1-hour session</li>
           <li>⚡ Cheaper coaching: ₦10k/30min</li>
         </ul>
-        <button class="primary" onclick="showPaymentModal(7499900, 'Elite Plan')">
-          Join Now
+        <button class="big-button primary" onclick="showPaymentModal(7499900, 'Elite Plan')">
+          Join Elite Program
         </button>
       </div>
     </div>
   </div>
 </section>
-
-  <!-- FAQ Section -->
-  <section id="faq">
-    <div class="container">
-      <h2>FAQ</h2>
-      <div class="faq-grid">
-        <div class="faq-item">
-          <div class="faq-question">
-            <h3>Q: Do I need prior animation experience to join this course?</h3>
-            <span class="toggle-icon">+</span>
-          </div>
-          <div class="faq-answer">
-            <p>A: No, this course is designed for beginners and intermediate learners. We'll start from the basics and gradually move to advanced topics.</p>
-          </div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-question">
-            <h3>Q: What software will I need for the course?</h3>
-            <span class="toggle-icon">+</span>
-          </div>
-          <div class="faq-answer">
-            <p>A: You'll get free access to all the paid software required for the course. No additional costs!</p>
-          </div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-question">
-            <h3>Q: Can I learn at my own pace?</h3>
-            <span class="toggle-icon">+</span>
-          </div>
-          <div class="faq-answer">
-            <p>A: Yes, the course is self-paced. You can complete it in as little as a month or take longer if needed.</p>
-          </div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-question">
-            <h3>Q: How do I book a 1-on-1 session with Actual Lawal?</h3>
-            <span class="toggle-icon">+</span>
-          </div>
-          <div class="faq-answer">
-            <p>A: Contact me on WhatsApp to schedule your session after payment.</p>
-          </div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-question">
-            <h3>Q: What if I have questions during the course?</h3>
-            <span class="toggle-icon">+</span>
-          </div>
-          <div class="faq-answer">
-            <p>A: You can reach out to me via WhatsApp for support.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <!-- Footer Section -->
   <footer>
