@@ -26,6 +26,85 @@
       box-sizing: border-box;
     }
 
+    /* Countdown Timer Styles */
+.countdown-section {
+  background: var(--black-secondary);
+  padding: 20px 0;
+  border-top: 1px solid var(--gold-primary);
+  border-bottom: 1px solid var(--gold-primary);
+  text-align: center;
+}
+
+.countdown-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.countdown-section h3 {
+  color: var(--gold-secondary);
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+}
+
+.countdown-timer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.countdown-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 70px;
+}
+
+.countdown-item span:first-child {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2.5rem;
+  color: var(--gold-primary);
+  line-height: 1;
+}
+
+.countdown-label {
+  font-size: 0.8rem;
+  color: var(--paper);
+  opacity: 0.8;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.countdown-separator {
+  font-size: 2rem;
+  color: var(--gold-primary);
+  margin-top: -15px;
+}
+
+.countdown-note {
+  color: var(--gold-secondary);
+  font-size: 0.9rem;
+  font-style: italic;
+}
+
+@media (max-width: 768px) {
+  .countdown-item {
+    min-width: 50px;
+  }
+  
+  .countdown-item span:first-child {
+    font-size: 2rem;
+  }
+  
+  .countdown-separator {
+    font-size: 1.5rem;
+    margin-top: -10px;
+  }
+}
+
     body {
       font-family: 'Montserrat', sans-serif;
       background-color: var(--black-primary);
@@ -1023,7 +1102,7 @@
     }
 </style>
 </head>
-<body>
+
   <!-- Doodle Elements -->
   <div class="doodle doodle-star" style="top: 20%; left: 10%;">✧</div>
   <div class="doodle doodle-star" style="top: 70%; right: 15%;">✧</div>
@@ -1099,6 +1178,35 @@
       </button>
     </div>
   </section>
+
+  <!-- Countdown Timer Section -->
+<div class="countdown-section">
+  <div class="countdown-container">
+    <h3>Limited Time Offer Ends In:</h3>
+    <div class="countdown-timer">
+      <div class="countdown-item">
+        <span id="days">03</span>
+        <span class="countdown-label">Days</span>
+      </div>
+      <div class="countdown-separator">:</div>
+      <div class="countdown-item">
+        <span id="hours">00</span>
+        <span class="countdown-label">Hours</span>
+      </div>
+      <div class="countdown-separator">:</div>
+      <div class="countdown-item">
+        <span id="minutes">00</span>
+        <span class="countdown-label">Minutes</span>
+      </div>
+      <div class="countdown-separator">:</div>
+      <div class="countdown-item">
+        <span id="seconds">00</span>
+        <span class="countdown-label">Seconds</span>
+      </div>
+    </div>
+    <p class="countdown-note">Enroll now before this offer expires!</p>
+  </div>
+</div>
 
   <!-- Reels Section with Autoplay -->
 <section class="reels-section" id="reels">
@@ -1507,6 +1615,59 @@
       });
     });
     
+    document.addEventListener('DOMContentLoaded', function() {
+  // Countdown Timer Functionality
+  function updateCountdown() {
+    // Set end date (3 days from now)
+    const endDate = new Date();
+    endDate.setDate(endDate.getDate() + 3);
+    
+    const now = new Date();
+    const timeLeft = endDate - now;
+    
+    // Get elements safely
+    const daysEl = document.getElementById('days');
+    const hoursEl = document.getElementById('hours');
+    const minutesEl = document.getElementById('minutes');
+    const secondsEl = document.getElementById('seconds');
+    const countdownTimer = document.querySelector('.countdown-timer');
+    const countdownTitle = document.querySelector('.countdown-section h3');
+    
+    // Check if elements exist
+    if (!daysEl || !hoursEl || !minutesEl || !secondsEl) {
+      console.error("Countdown elements not found!");
+      return;
+    }
+    
+    if (timeLeft <= 0) {
+      if (countdownTitle) countdownTitle.textContent = "Offer Has Expired!";
+      if (countdownTimer) countdownTimer.style.display = 'none';
+      return;
+    }
+    
+    const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+    
+    daysEl.textContent = days.toString().padStart(2, '0');
+    hoursEl.textContent = hours.toString().padStart(2, '0');
+    minutesEl.textContent = minutes.toString().padStart(2, '0');
+    secondsEl.textContent = seconds.toString().padStart(2, '0');
+  }
+
+  // Only start if elements exist
+  if (document.getElementById('days')) {
+    // Update countdown every second
+    setInterval(updateCountdown, 1000);
+    updateCountdown(); // Initial call
+    console.log("Countdown timer initialized!");
+  } else {
+    console.warn("Countdown elements not found - timer not initialized");
+  }
+});
+
+
     // Animate on scroll
     const animateElements = () => {
       const elements = document.querySelectorAll('.animate');
@@ -1567,6 +1728,7 @@ window.addEventListener('click', (e) => {
     document.body.style.overflow = 'auto';
   }
 });
+
 
 // Payment form submission - REMOVE THE DUPLICATE ONE
 paymentForm.addEventListener('submit', function(e) {
