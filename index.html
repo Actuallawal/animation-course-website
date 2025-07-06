@@ -3,587 +3,606 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>2D Animation Course: From Newbie to Ninja</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700&family=Chewy&family=Fredoka+One&display=swap" rel="stylesheet">
+  <title>2D Animation Mastery | Futuristic Course</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
   <script src="https://js.paystack.co/v1/inline.js"></script>
   <style>
-    /* Color Palette */
+    /* Futuristic Color Palette */
     :root {
-      --gold-light: #DBB12A;
-      --gold: #AE8B0F;
-      --gold-dark: #734B1A;
-      --brown-dark: #30250B;
-      --brown-darker: #150E03;
-      --text-light: #f8f8f8;
-      --text-dark: #333;
-      --bg-light: #f9f9f9;
+      --neon-blue: #00f0ff;
+      --neon-purple: #b400ff;
+      --neon-pink: #ff00d4;
+      --dark-space: #0a0a12;
+      --space-gray: #1a1a2e;
+      --star-dust: #e2e2e2;
+      --galaxy-purple: #2a0b45;
+      --hologram-teal: #00ffcc;
     }
 
-    /* General Styles */
-    body {
-      font-family: 'Baloo 2', cursive;
+    /* Base Styles */
+    * {
       margin: 0;
       padding: 0;
-      line-height: 1.6;
-      color: var(--text-dark);
-      background-color: var(--bg-light);
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: var(--dark-space);
+      color: var(--star-dust);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Orbitron', sans-serif;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
     }
 
     .container {
       width: 90%;
-      margin: 0 auto;
       max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
     }
 
-    /* Navigation Bar */
-    nav {
-      background: var(--brown-darker);
-      padding: 15px 0;
-      position: sticky;
+    section {
+      padding: 100px 0;
+      position: relative;
+    }
+
+    /* Glow Effects */
+    .glow-text {
+      text-shadow: 0 0 10px rgba(0, 240, 255, 0.7);
+    }
+
+    .glow-box {
+      box-shadow: 0 0 15px rgba(0, 240, 255, 0.5);
+    }
+
+    /* Futuristic Button */
+    .btn-futuristic {
+      display: inline-block;
+      padding: 15px 30px;
+      background: linear-gradient(135deg, var(--neon-blue), var(--neon-purple));
+      color: white;
+      border: none;
+      border-radius: 50px;
+      font-family: 'Orbitron', sans-serif;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.4s ease;
+      z-index: 1;
+    }
+
+    .btn-futuristic::before {
+      content: '';
+      position: absolute;
       top: 0;
-      z-index: 1000;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, var(--neon-purple), var(--neon-pink));
+      z-index: -1;
+      opacity: 0;
+      transition: opacity 0.4s ease;
     }
 
-    nav .container {
+    .btn-futuristic:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(0, 240, 255, 0.3);
+    }
+
+    .btn-futuristic:hover::before {
+      opacity: 1;
+    }
+
+    .btn-futuristic:active {
+      transform: translateY(1px);
+    }
+
+    /* Grid Layout */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+
+    /* Header Navigation - Futuristic Style */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      background: rgba(10, 10, 18, 0.9);
+      backdrop-filter: blur(10px);
+      padding: 20px 0;
+      border-bottom: 1px solid rgba(0, 240, 255, 0.1);
+    }
+
+    .header-container {
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
 
-    nav .logo img {
+    .logo img {
       height: 50px;
-      width: auto;
+      filter: drop-shadow(0 0 5px var(--neon-blue));
     }
 
     .nav-links {
       display: flex;
       gap: 30px;
-      list-style: none;
-      margin: 0;
-      padding: 0;
     }
 
     .nav-links a {
-      color: var(--text-light);
+      color: var(--star-dust);
       text-decoration: none;
+      font-family: 'Orbitron', sans-serif;
       font-weight: 500;
-      transition: color 0.3s ease;
+      position: relative;
+      padding: 5px 0;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--neon-blue);
+      transition: width 0.3s ease;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
     }
 
     .nav-links a:hover {
-      color: var(--gold-light);
+      color: var(--neon-blue);
     }
 
     /* Mobile Navigation */
     .mobile-menu-btn {
       display: none;
-      color: var(--text-light);
+      background: none;
+      border: none;
+      color: var(--neon-blue);
       font-size: 1.5rem;
       cursor: pointer;
     }
 
     .mobile-nav {
-      display: none;
-      background: var(--brown-darker);
-      padding: 10px 0;
-      position: absolute;
-      width: 100%;
-      top: 60px;
+      position: fixed;
+      top: 80px;
       left: 0;
+      width: 100%;
+      background: var(--space-gray);
+      padding: 20px;
+      transform: translateY(-150%);
+      transition: transform 0.4s ease;
       z-index: 999;
+      border-bottom: 1px solid var(--neon-blue);
     }
 
     .mobile-nav.active {
-      display: block;
+      transform: translateY(0);
     }
 
     .mobile-nav a {
-      color: var(--text-light);
-      text-decoration: none;
       display: block;
-      padding: 10px 20px;
-      text-align: center;
-    }
-
-    /* Header Section */
-    header {
-      background: linear-gradient(135deg, var(--gold-light), var(--gold));
-      color: var(--brown-darker);
-      padding: 80px 0;
-      text-align: center;
-    }
-
-    header h1 {
-      font-size: 2.8rem;
-      margin-bottom: 10px;
-      color: var(--brown-darker);
-      text-shadow: 1px 1px 3px rgba(255,255,255,0.3);
-    }
-
-    header p {
-      font-size: 1.2rem;
-      margin-bottom: 20px;
-      font-weight: 600;
-    }
-
-    .cta-button {
-      background: var(--brown-darker);
-      color: var(--gold-light);
-      padding: 12px 25px;
-      border-radius: 5px;
-      font-weight: 600;
+      color: var(--star-dust);
       text-decoration: none;
-      display: inline-block;
-      transition: all 0.3s ease;
-      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+      padding: 15px 0;
+      border-bottom: 1px solid rgba(0, 240, 255, 0.1);
+      font-family: 'Orbitron', sans-serif;
     }
 
-    .cta-button:hover {
-      background: var(--brown-dark);
-      transform: translateY(-2px);
-      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    .mobile-nav a:hover {
+      color: var(--neon-blue);
     }
 
-    /* Course Details Section */
-    #course-details {
-      padding: 60px 0;
-      background: #fff;
-    }
-
-    #course-details h2 {
-      text-align: center;
-      margin-bottom: 20px;
-      font-size: 2.2rem;
-      color: var(--gold);
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 20px;
-    }
-
-    .grid div {
-      background: #f5f5f5;
-      padding: 20px;
-      border-radius: 5px;
-      text-align: center;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      color: var(--text-dark);
-      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-      border: 1px solid var(--gold-light);
-    }
-
-    .grid div:hover {
-      transform: scale(1.05);
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-      background: var(--gold-light);
-      color: var(--brown-darker);
-    }
-
-    /* Pricing Plans Section */
-    #pricing {
-      padding: 60px 0;
-      background: var(--bg-light);
-    }
-
-    #pricing h2 {
-      text-align: center;
-      margin-bottom: 20px;
-      font-size: 2.2rem;
-      color: var(--gold);
-    }
-
-    .plans {
+    /* Hero Section - Futuristic Design */
+    .hero {
+      height: 100vh;
       display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
+      align-items: center;
+      background: radial-gradient(ellipse at bottom, var(--galaxy-purple), var(--dark-space));
+      overflow: hidden;
+      position: relative;
     }
 
-    .plan {
-      background: #fff;
-      padding: 20px;
-      border-radius: 5px;
-      text-align: center;
-      flex: 1 1 300px;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      color: var(--text-dark);
-      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-      border: 1px solid var(--gold);
-    }
-
-    .plan:hover {
-      transform: scale(1.05);
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    }
-
-    .plan h3 {
-      font-size: 1.5rem;
-      margin-bottom: 10px;
-      color: var(--gold-dark);
-    }
-
-    h1, h2, h3 {
-      font-family: 'Fredoka One', cursive;
-    }
-
-    .plan p {
-      font-size: 1.2rem;
-      color: var(--gold);
-      margin-bottom: 20px;
-    }
-
-    .plan ul {
-      list-style: none;
-      padding: 0;
-    }
-
-    .plan ul li {
-      margin: 10px 0;
-    }
-
-    /* Big Buttons */
-    .big-button {
-      display: block;
-      width: 100%;
-      padding: 16px;
-      font-size: 1.1rem;
-      font-weight: bold;
-      border-radius: 8px;
-      border: none;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      margin-top: 20px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-
-    .big-button.primary {
-      background: var(--gold-dark);
-      color: white;
-      box-shadow: 0 4px 15px rgba(115, 75, 26, 0.3);
-    }
-
-    .big-button.primary:hover {
-      background: var(--brown-dark);
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(115, 75, 26, 0.4);
-    }
-
-    .big-button:not(.primary) {
-      background: var(--gold-light);
-      color: var(--brown-darker);
-      box-shadow: 0 4px 15px rgba(219, 177, 42, 0.3);
-    }
-
-    .big-button:not(.primary):hover {
-      background: var(--gold);
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(219, 177, 42, 0.4);
-    }
-
-    /* Popular Tag */
-    .popular-tag {
+    .hero::before {
+      content: '';
       position: absolute;
-      top: -12px;
-      right: 20px;
-      background: var(--gold-dark);
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path fill="rgba(0,240,255,0.03)" d="M0,0 L100,0 L100,100 L0,100 Z" /></svg>');
+      background-size: cover;
+      z-index: 0;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      width: 100%;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      margin-bottom: 20px;
+      background: linear-gradient(to right, var(--neon-blue), var(--neon-pink));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      line-height: 1.2;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 700px;
+      margin: 0 auto 30px;
+      color: var(--star-dust);
+    }
+
+    /* Animated Stars Background */
+    .stars {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+    }
+
+    .star {
+      position: absolute;
+      background: white;
+      border-radius: 50%;
+      animation: twinkle var(--duration) infinite ease-in-out;
+      opacity: 0;
+    }
+
+    @keyframes twinkle {
+      0%, 100% { opacity: 0; }
+      50% { opacity: var(--opacity); }
+    }
+
+    /* Course Features - Holographic Cards */
+    .feature-card {
+      background: rgba(26, 26, 46, 0.7);
+      border: 1px solid rgba(0, 240, 255, 0.2);
+      border-radius: 10px;
+      padding: 30px;
+      transition: all 0.4s ease;
+      position: relative;
+      overflow: hidden;
+      backdrop-filter: blur(5px);
+    }
+
+    .feature-card::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(
+        to bottom right,
+        rgba(0, 240, 255, 0.1),
+        rgba(180, 0, 255, 0.1),
+        rgba(255, 0, 212, 0.1)
+      );
+      transform: rotate(30deg);
+      z-index: -1;
+      transition: all 0.6s ease;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0, 240, 255, 0.2);
+      border-color: var(--neon-blue);
+    }
+
+    .feature-card:hover::before {
+      transform: rotate(45deg);
+    }
+
+    .feature-icon {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      color: var(--neon-blue);
+    }
+
+    /* Pricing Plans - Futuristic UI */
+    .pricing-plans {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+
+    .pricing-card {
+      background: rgba(26, 26, 46, 0.7);
+      border: 1px solid rgba(0, 240, 255, 0.2);
+      border-radius: 10px;
+      padding: 40px 30px;
+      transition: all 0.4s ease;
+      position: relative;
+      overflow: hidden;
+      backdrop-filter: blur(5px);
+    }
+
+    .pricing-card.popular {
+      border: 1px solid var(--neon-pink);
+      transform: scale(1.05);
+    }
+
+    .pricing-card.popular::after {
+      content: 'BEST VALUE';
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      background: var(--neon-pink);
       color: white;
-      padding: 5px 15px;
+      padding: 5px 10px;
       border-radius: 20px;
       font-size: 0.8rem;
       font-weight: bold;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      text-transform: uppercase;
     }
 
-    .plan.popular {
-      position: relative;
-      border: 2px solid var(--gold-dark);
-      transform: scale(1.02);
-    }
-
-    .old-price {
-      text-decoration: line-through;
-      color: #999;
-      margin-right: 10px;
-    }
-    .new-price {
-      font-weight: bold;
-      color: var(--gold-dark);
-    }
-
-    /* About the Instructor Section */
-    #about-instructor {
-      padding: 60px 0;
-      background: #fff;
-    }
-
-    #about-instructor h2 {
-      text-align: left;
-      margin-bottom: 20px;
-      font-size: 2.2rem;
-      color: var(--gold);
-    }
-
-    #about-instructor p {
-      text-align: center;
-      max-width: 800px;
-      margin: 0 auto;
-    }
-
-    /* Testimonials Section */
-    #testimonials {
-      padding: 60px 0;
-      background: var(--bg-light);
-    }
-
-    #testimonials h2 {
-      text-align: center;
-      margin-bottom: 20px;
-      font-size: 2.2rem;
-      color: var(--gold);
-    }
-
-    .testimonial-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-    }
-
-    .testimonial {
-      background: #fff;
-      padding: 20px;
-      border-radius: 5px;
-      text-align: center;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      color: var(--text-dark);
-      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-      border: 1px solid var(--gold-light);
-    }
-
-    .testimonial:hover {
-      transform: scale(1.05);
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    }
-
-    .testimonial-icon {
-      font-size: 2rem;
-      margin-bottom: 10px;
-      color: var(--gold);
-    }
-
-    /* FAQ Section */
-    #faq {
-      padding: 60px 0;
-      background: #fff;
-    }
-
-    #faq h2 {
-      text-align: center;
-      margin-bottom: 20px;
-      font-size: 2.2rem;
-      color: var(--gold);
-    }
-
-    .faq-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 20px;
-    }
-
-    .faq-item {
-      background: #f5f5f5;
-      padding: 15px;
-      border-radius: 5px;
-      color: var(--text-dark);
-      transition: all 0.3s ease;
-      border: 1px solid var(--gold-light);
-    }
-
-    .faq-item:hover {
-      background: var(--gold-light);
-      color: var(--brown-darker);
-    }
-
-    .faq-question {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      cursor: pointer;
-    }
-
-    .faq-question h3 {
-      margin: 0;
-      font-size: 1.2rem;
-    }
-
-    .toggle-icon {
+    .pricing-card h3 {
       font-size: 1.5rem;
+      margin-bottom: 15px;
+      color: var(--neon-blue);
+    }
+
+    .price {
+      font-size: 2.5rem;
       font-weight: bold;
-      color: var(--gold);
-    }
-
-    .faq-answer {
-      display: none;
-      margin-top: 10px;
-    }
-
-    .faq-answer p {
-      margin: 0;
-    }
-
-    .faq-item.active .faq-answer {
-      display: block;
-    }
-
-    /* Footer Section */
-    footer {
-      background: var(--brown-darker);
-      color: var(--gold-light);
-      text-align: center;
-      padding: 20px 0;
-      margin-top: 40px;
-    }
-
-    .social-links a {
-      color: var(--gold-light);
-      margin: 0 10px;
-      font-size: 1.5rem;
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
-
-    .social-links a:hover {
-      color: var(--gold);
-    }
-
-    /* Scroll to Top Button */
-    .scroll-to-top {
-      display: none;
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background: var(--gold);
-      color: var(--brown-darker);
-      padding: 10px;
-      border-radius: 50%;
-      cursor: pointer;
-      transition: background 0.3s ease;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-    }
-
-    .scroll-to-top:hover {
-      background: var(--gold-light);
-    }
-
-    /* Modal Styles */
-    .modal {
-      display: none;
-      position: fixed;
-      z-index: 1001;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0,0,0,0.5);
-    }
-
-    .modal-content {
-      background-color: #fff;
-      margin: 10% auto;
-      padding: 30px;
-      border-radius: 8px;
-      width: 90%;
-      max-width: 500px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-      position: relative;
-    }
-
-    .close-modal {
-      position: absolute;
-      top: 15px;
-      right: 20px;
-      color: #aaa;
-      font-size: 28px;
-      font-weight: bold;
-      cursor: pointer;
-    }
-
-    .close-modal:hover {
-      color: var(--gold);
-    }
-
-    .modal h3 {
-      color: var(--gold);
-      margin-bottom: 20px;
-      text-align: center;
-    }
-
-    .form-group {
-      margin-bottom: 20px;
-    }
-
-    .form-group label {
-      display: block;
-      margin-bottom: 8px;
-      font-weight: 600;
-    }
-
-    .form-group input {
-      width: 100%;
-      padding: 12px;
-      border: 1px solid #ddd;
-      border-radius: 5px;
-      background: #fff;
-      color: var(--text-dark);
-      font-size: 1rem;
-    }
-
-    .form-group input:focus {
-      outline: none;
-      border-color: var(--gold);
-    }
-
-    .modal-buttons {
-      display: flex;
-      justify-content: space-between;
-      margin-top: 30px;
-    }
-
-    .cancel-btn {
-      background: #aaa;
+      margin: 20px 0;
       color: white;
-      border: none;
-      padding: 12px 20px;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: all 0.3s ease;
     }
 
-    .cancel-btn:hover {
-      background: #999;
+    .price .old-price {
+      text-decoration: line-through;
+      color: var(--star-dust);
+      opacity: 0.7;
+      font-size: 1.5rem;
     }
 
-    /* Loading Spinner */
-    .spinner {
-      display: none;
-      width: 40px;
-      height: 40px;
-      margin: 20px auto;
-      border: 4px solid rgba(219, 177, 42, 0.3);
+    .price .new-price {
+      color: var(--hologram-teal);
+    }
+
+    .pricing-features {
+      list-style: none;
+      margin: 30px 0;
+    }
+
+    .pricing-features li {
+      margin-bottom: 15px;
+      position: relative;
+      padding-left: 30px;
+    }
+
+    .pricing-features li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: var(--neon-blue);
+      font-weight: bold;
+    }
+
+    /* Instructor Section - Holographic Profile */
+    .instructor-profile {
+      display: flex;
+      align-items: center;
+      gap: 50px;
+      margin-top: 50px;
+    }
+
+    .instructor-image {
+      width: 300px;
+      height: 300px;
       border-radius: 50%;
-      border-top: 4px solid var(--gold);
-      animation: spin 1s linear infinite;
+      border: 5px solid var(--neon-blue);
+      position: relative;
+      overflow: hidden;
+      flex-shrink: 0;
+      box-shadow: 0 0 30px rgba(0, 240, 255, 0.3);
     }
 
-    @keyframes spin {
+    .instructor-image::before {
+      content: '';
+      position: absolute;
+      top: -10%;
+      left: -10%;
+      width: 120%;
+      height: 120%;
+      background: conic-gradient(
+        transparent,
+        var(--neon-blue),
+        transparent
+      );
+      animation: rotate 8s linear infinite;
+      z-index: -1;
+    }
+
+    @keyframes rotate {
       0% { transform: rotate(0deg); }
       100% { transform: rotate(360deg); }
     }
 
-    /* Responsive Styles */
+    .instructor-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+      position: relative;
+      z-index: 1;
+    }
+
+    .instructor-bio p {
+      margin-bottom: 20px;
+    }
+
+    /* Testimonials - Floating Holograms */
+    .testimonial-card {
+      background: rgba(26, 26, 46, 0.7);
+      border: 1px solid rgba(0, 240, 255, 0.2);
+      border-radius: 10px;
+      padding: 30px;
+      transition: all 0.4s ease;
+      position: relative;
+      overflow: hidden;
+      backdrop-filter: blur(5px);
+    }
+
+    .testimonial-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0, 240, 255, 0.2);
+    }
+
+    .testimonial-icon {
+      font-size: 2rem;
+      color: var(--neon-pink);
+      margin-bottom: 20px;
+    }
+
+    .testimonial-text {
+      font-style: italic;
+      margin-bottom: 20px;
+    }
+
+    .testimonial-author {
+      font-weight: bold;
+      color: var(--neon-blue);
+    }
+
+    /* FAQ Section - Futuristic Accordion */
+    .faq-item {
+      margin-bottom: 20px;
+      border: 1px solid rgba(0, 240, 255, 0.2);
+      border-radius: 10px;
+      overflow: hidden;
+      transition: all 0.4s ease;
+    }
+
+    .faq-item.active {
+      border-color: var(--neon-blue);
+    }
+
+    .faq-question {
+      padding: 20px;
+      background: rgba(26, 26, 46, 0.7);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: all 0.4s ease;
+    }
+
+    .faq-item.active .faq-question {
+      background: rgba(0, 240, 255, 0.1);
+    }
+
+    .faq-question h3 {
+      font-size: 1.2rem;
+      color: var(--star-dust);
+    }
+
+    .faq-question i {
+      color: var(--neon-blue);
+      transition: transform 0.4s ease;
+    }
+
+    .faq-item.active .faq-question i {
+      transform: rotate(180deg);
+    }
+
+    .faq-answer {
+      padding: 0 20px;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease, padding 0.4s ease;
+    }
+
+    .faq-item.active .faq-answer {
+      padding: 20px;
+      max-height: 500px;
+    }
+
+    /* Footer - Futuristic Style */
+    footer {
+      background: var(--space-gray);
+      padding: 50px 0 20px;
+      border-top: 1px solid rgba(0, 240, 255, 0.2);
+    }
+
+    .footer-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 20px;
+      margin-bottom: 30px;
+    }
+
+    .social-links a {
+      color: var(--star-dust);
+      font-size: 1.5rem;
+      transition: all 0.4s ease;
+    }
+
+    .social-links a:hover {
+      color: var(--neon-blue);
+      transform: translateY(-5px);
+    }
+
+    .copyright {
+      color: var(--star-dust);
+      opacity: 0.7;
+      font-size: 0.9rem;
+    }
+
+    /* Floating Elements Animation */
+    .floating {
+      animation: floating 6s ease-in-out infinite;
+    }
+
+    @keyframes floating {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
+    }
+
+    /* Responsive Design */
+    @media (max-width: 992px) {
+      .instructor-profile {
+        flex-direction: column;
+        text-align: center;
+      }
+      
+      .instructor-image {
+        margin-bottom: 30px;
+      }
+    }
+
     @media (max-width: 768px) {
       .nav-links {
         display: none;
@@ -593,205 +612,318 @@
         display: block;
       }
       
-      header h1 {
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+      
+      .pricing-card.popular {
+        transform: none;
+      }
+      
+      section {
+        padding: 70px 0;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .hero h1 {
         font-size: 2rem;
       }
       
-      .plans {
-        flex-direction: column;
+      .hero p {
+        font-size: 1rem;
+      }
+      
+      .btn-futuristic {
+        padding: 12px 25px;
       }
     }
 
-    /* Paystack Button */
-    .paystack-button {
-      background: var(--gold-dark);
-      color: white;
-      padding: 12px 25px;
-      border: none;
-      border-radius: 5px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      display: inline-block;
-      text-decoration: none;
-      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    /* Special Effects */
+    .cyber-line {
+      height: 2px;
+      background: linear-gradient(to right, transparent, var(--neon-blue), transparent);
+      margin: 40px 0;
+      width: 100%;
     }
 
-    .paystack-button:hover {
-      background: var(--brown-dark);
-      transform: translateY(-2px);
-      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    .tech-circle {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      border: 2px dashed var(--neon-blue);
+      position: absolute;
+      opacity: 0.3;
+      animation: rotate 20s linear infinite;
+    }
+
+    /* Modal Styles - Futuristic */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(10, 10, 18, 0.9);
+      backdrop-filter: blur(5px);
+      z-index: 2000;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .modal-content {
+      background: var(--space-gray);
+      border: 1px solid var(--neon-blue);
+      border-radius: 10px;
+      padding: 40px;
+      max-width: 500px;
+      width: 90%;
+      position: relative;
+      box-shadow: 0 0 30px rgba(0, 240, 255, 0.3);
+    }
+
+    .close-modal {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      color: var(--neon-blue);
+      font-size: 1.5rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .close-modal:hover {
+      color: var(--neon-pink);
+      transform: rotate(90deg);
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--neon-blue);
+      font-family: 'Orbitron', sans-serif;
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 12px 15px;
+      background: rgba(26, 26, 46, 0.7);
+      border: 1px solid rgba(0, 240, 255, 0.3);
+      border-radius: 5px;
+      color: white;
+      font-family: 'Roboto', sans-serif;
+      transition: all 0.3s ease;
+    }
+
+    .form-control:focus {
+      outline: none;
+      border-color: var(--neon-blue);
+      box-shadow: 0 0 10px rgba(0, 240, 255, 0.3);
+    }
+
+    .modal-buttons {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 30px;
+    }
+
+    .spinner {
+      display: none;
+      width: 40px;
+      height: 40px;
+      margin: 20px auto;
+      border: 4px solid rgba(0, 240, 255, 0.3);
+      border-radius: 50%;
+      border-top: 4px solid var(--neon-blue);
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
     }
   </style>
 </head>
 <body>
-  <!-- Navigation Bar -->
-  <nav>
-    <div class="container">
+  <!-- Animated Stars Background -->
+  <div class="stars" id="stars"></div>
+
+  <!-- Header Navigation -->
+  <header>
+    <div class="container header-container">
       <div class="logo">
-        <a href="#home">
-          <img src="https://i.ibb.co/PvnNSJTL/Kidnapped-Merch-head.png" alt="Actual Lawal Logo">
-        </a>
+        <img src="https://i.ibb.co/PvnNSJTL/Kidnapped-Merch-head.png" alt="Actual Lawal Logo">
       </div>
-      <ul class="nav-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#course-details">Course</a></li>
-        <li><a href="#pricing">Pricing</a></li>
-        <li><a href="#about-instructor">About</a></li>
-        <li><a href="#testimonials">Testimonials</a></li>
-        <li><a href="#faq">FAQ</a></li>
-      </ul>
-      <div class="mobile-menu-btn">
+      <nav class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#course">Course</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#instructor">Instructor</a>
+        <a href="#testimonials">Testimonials</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <button class="mobile-menu-btn" id="mobileMenuBtn">
         <i class="fas fa-bars"></i>
-      </div>
+      </button>
     </div>
     <!-- Mobile Navigation -->
-    <ul class="mobile-nav">
-      <li><a href="#home">Home</a></li>
-      <li><a href="#course-details">Course</a></li>
-      <li><a href="#pricing">Pricing</a></li>
-      <li><a href="#about-instructor">About</a></li>
-      <li><a href="#testimonials">Testimonials</a></li>
-      <li><a href="#faq">FAQ</a></li>
-    </ul>
-  </nav>
-
-  <!-- Header Section -->
-  <header id="home">
-    <div class="container">
-      <h1>2D Animation Course:<br>From Newbie to Ninja</h1>
-      <p>Learn 2D Animation from Scratch with Actual Lawal</p>
-      <a href="#pricing" class="cta-button">Enroll Now</a>
-    </div>
+    <nav class="mobile-nav" id="mobileNav">
+      <a href="#home">Home</a>
+      <a href="#course">Course</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#instructor">Instructor</a>
+      <a href="#testimonials">Testimonials</a>
+      <a href="#faq">FAQ</a>
+    </nav>
   </header>
 
-  <!-- Course Details Section -->
-  <section id="course-details">
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="container hero-content">
+      <h1>2D Animation Mastery</h1>
+      <p>Transform from beginner to pro with our cutting-edge animation course powered by AI-assisted learning</p>
+      <button class="btn-futuristic" onclick="document.getElementById('pricing').scrollIntoView({ behavior: 'smooth' })">
+        Enroll Now
+      </button>
+    </div>
+    <div class="tech-circle" style="top: 20%; left: 10%;"></div>
+    <div class="tech-circle" style="bottom: 10%; right: 15%;"></div>
+  </section>
+
+  <!-- Course Features Section -->
+  <section id="course">
     <div class="container">
-      <h2>What You'll Learn</h2>
+      <h2>Course Features</h2>
+      <div class="cyber-line"></div>
       <div class="grid">
-        <div>🎨 Intro to 2D Animation</div>
-        <div>🖌️ Character Design</div>
-        <div>🎥 Timing and Workflow</div>
-        <div>💡 Body Mechanics</div>
-        <div>👄 Lip-Sync and Dialogue</div>
-        <div>🚀 Exporting and Publishing</div>
-        <div>🎬 Advanced Camera Techniques</div>
-        <div>📚 Portfolio Building</div>
+        <div class="feature-card floating" style="animation-delay: 0s;">
+          <div class="feature-icon">
+            <i class="fas fa-paint-brush"></i>
+          </div>
+          <h3>Character Design</h3>
+          <p>Master the art of creating memorable characters with personality and appeal.</p>
+        </div>
+        <div class="feature-card floating" style="animation-delay: 0.2s;">
+          <div class="feature-icon">
+            <i class="fas fa-film"></i>
+          </div>
+          <h3>Animation Principles</h3>
+          <p>Learn the 12 fundamental principles that bring your animations to life.</p>
+        </div>
+        <div class="feature-card floating" style="animation-delay: 0.4s;">
+          <div class="feature-icon">
+            <i class="fas fa-microphone"></i>
+          </div>
+          <h3>Lip Sync</h3>
+          <p>Perfect the art of matching mouth movements to dialogue for realistic speech.</p>
+        </div>
+        <div class="feature-card floating" style="animation-delay: 0.6s;">
+          <div class="feature-icon">
+            <i class="fas fa-rocket"></i>
+          </div>
+          <h3>Advanced Techniques</h3>
+          <p>Explore camera movements, special effects, and professional workflows.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Pricing Plans Section -->
+  <!-- Pricing Section -->
   <section id="pricing">
     <div class="container">
-      <h2>Choose Your Plan</h2>
-      
-      <div class="plans">
+      <h2>Pricing Plans</h2>
+      <div class="cyber-line"></div>
+      <div class="pricing-plans">
         <!-- Starter Plan -->
-        <div class="plan">
+        <div class="pricing-card">
           <h3>Starter</h3>
-          <p class="price">
+          <div class="price">
             <span class="old-price">₦100,000</span>
             <span class="new-price">₦49,999</span>
-          </p>
-          <ul>
-            <li>🔓 Full course access</li>
-            <li>💻 Software included</li>
-            <li>📱 WhatsApp support</li>
-            <li>🎓 Extra coaching: ₦15k/30min</li>
+          </div>
+          <ul class="pricing-features">
+            <li>Full course access</li>
+            <li>Software included</li>
+            <li>WhatsApp support</li>
+            <li>Extra coaching: ₦15k/30min</li>
           </ul>
-          <button class="big-button" onclick="showPaymentModal(4999900, 'Starter Plan')">
-            Get Started Now
+          <button class="btn-futuristic" onclick="showPaymentModal(4999900, 'Starter Plan')">
+            Get Started
           </button>
         </div>
-
+        
         <!-- Elite Plan -->
-        <div class="plan popular">
-          <div class="popular-tag">BEST VALUE</div>
+        <div class="pricing-card popular">
           <h3>Elite</h3>
-          <p class="price">
+          <div class="price">
             <span class="old-price">₦150,000</span>
             <span class="new-price">₦74,999</span>
-          </p>
-          <ul>
-            <li>🚀 Everything in Starter</li>
-            <li>👨‍🏫 Free 1-hour session</li>
-            <li>⚡ Cheaper coaching: ₦10k/30min</li>
+          </div>
+          <ul class="pricing-features">
+            <li>Everything in Starter</li>
+            <li>Free 1-hour session</li>
+            <li>Cheaper coaching: ₦10k/30min</li>
+            <li>Priority support</li>
           </ul>
-          <button class="big-button primary" onclick="showPaymentModal(7499900, 'Elite Plan')">
-            Join Elite Program
+          <button class="btn-futuristic" onclick="showPaymentModal(7499900, 'Elite Plan')">
+            Join Elite
           </button>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- About the Instructor Section -->
-  <section id="about-instructor">
+  <!-- Instructor Section -->
+  <section id="instructor">
     <div class="container">
       <h2>About the Instructor</h2>
-      <p>
-  Hi, I'm <strong>Seidu Lawal</strong> — popularly known online as <strong>Actual Lawal</strong>. 
-  I'm a professional 2D animator and comedy content creator with over 2 years of hands-on experience 
-  in creating viral, engaging, and educational animated content.  
-</p>
-
-<p>
-  My animations have powered campaigns and stories for top brands like 
-  <strong>Prune Payments</strong>, <strong>Cleva</strong>, <strong>Creed Logistics</strong>, and more. 
-  With a growing audience of thousands across platforms like TikTok, Instagram, and Facebook, 
-  I understand what it takes to make content that connects, entertains, and educates.
-</p>
-
-<p>
-  This course is built for anyone who wants to turn their love for animation into a serious skill — 
-  even if you're starting from scratch. I'll walk you through every step using simple explanations, 
-  real-life examples, and practical assignments you can follow.
-</p>
-
-<p>
-  Whether you want to create skits, work with clients, or launch your own animated series — 
-  this course is your starting point. Let's bring your ideas to life, one frame at a time! 🎬🔥
-</p>
-
+      <div class="cyber-line"></div>
+      <div class="instructor-profile">
+        <div class="instructor-image">
+          <img src="https://i.ibb.co/PvnNSJTL/Kidnapped-Merch-head.png" alt="Actual Lawal">
+        </div>
+        <div class="instructor-bio">
+          <h3>Actual Lawal</h3>
+          <p>Professional 2D animator and comedy content creator with over 2 years of experience creating viral, engaging animated content.</p>
+          <p>My animations have powered campaigns for top brands like Prune Payments, Cleva, and Creed Logistics.</p>
+          <p>With a growing audience across TikTok, Instagram, and Facebook, I understand what makes content connect, entertain, and educate.</p>
+          <p>This course is built for anyone who wants to turn their love for animation into a serious skill - even if you're starting from scratch.</p>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- Testimonials Section -->
   <section id="testimonials">
     <div class="container">
-      <h2>What Students Are Saying</h2>
-      <div class="testimonial-grid">
-        <div class="testimonial">
+      <h2>Student Testimonials</h2>
+      <div class="cyber-line"></div>
+      <div class="grid">
+        <div class="testimonial-card">
           <div class="testimonial-icon">
-            <i class="fas fa-user"></i>
+            <i class="fas fa-quote-left"></i>
           </div>
-          <p>"The Elite Mentorship plan was a game-changer! Actual Lawal's personalized feedback helped me improve so quickly. I can't recommend it enough!" - <strong>Ibrahim Oghene</strong></p>
+          <p class="testimonial-text">"The Elite Mentorship plan was a game-changer! Actual Lawal's personalized feedback helped me improve so quickly."</p>
+          <p class="testimonial-author">- Ibrahim Oghene</p>
         </div>
-        <div class="testimonial">
+        <div class="testimonial-card">
           <div class="testimonial-icon">
-            <i class="fas fa-user"></i>
+            <i class="fas fa-quote-left"></i>
           </div>
-          <p>"I chose the Elite plan, and it was worth every kobo. The 1-on-1 sessions were incredibly insightful. Actual Lawal is a fantastic mentor! More wins boss!" - <strong>Abdul Sanusi</strong></p>
+          <p class="testimonial-text">"I chose the Elite plan, and it was worth every kobo. The 1-on-1 sessions were incredibly insightful."</p>
+          <p class="testimonial-author">- Abdul Sanusi</p>
         </div>
-        <div class="testimonial">
+        <div class="testimonial-card">
           <div class="testimonial-icon">
-            <i class="fas fa-user"></i>
+            <i class="fas fa-quote-left"></i>
           </div>
-          <p>"I learned so much from this course! The tips on character design and workflow have completely changed my approach to animation." - <strong>Tunde Kamaru</strong></p>
-        </div>
-        <div class="testimonial">
-          <div class="testimonial-icon">
-            <i class="fas fa-user"></i>
-          </div>
-          <p>"I got everything I needed to jumpstart my animation career. Worth every naira!" - <strong>Mary Osas</strong></p>
-        </div>
-        <div class="testimonial">
-          <div class="testimonial-icon">
-            <i class="fas fa-user"></i>
-          </div>
-          <p>"Omom! The Elite plan gave me the confidence to create my own animations. Actual Lawal's guidance was invaluable! And new topics and tips are uploaded on a regular bases" - <strong>Emeka Nate.</strong></p>
+          <p class="testimonial-text">"I learned so much from this course! The tips on character design have completely changed my approach."</p>
+          <p class="testimonial-author">- Tunde Kamaru</p>
         </div>
       </div>
     </div>
@@ -800,79 +932,55 @@
   <!-- FAQ Section -->
   <section id="faq">
     <div class="container">
-      <h2>FAQ</h2>
-      <div class="faq-grid">
+      <h2>Frequently Asked Questions</h2>
+      <div class="cyber-line"></div>
+      <div class="faq-list">
         <div class="faq-item">
           <div class="faq-question">
-            <h3>Q: Do I need prior animation experience to join this course?</h3>
-            <span class="toggle-icon">+</span>
+            <h3>Do I need prior animation experience to join this course?</h3>
+            <i class="fas fa-chevron-down"></i>
           </div>
           <div class="faq-answer">
-            <p>A: No, this course is designed for beginners and intermediate learners. We'll start from the basics and gradually move to advanced topics.</p>
+            <p>No, this course is designed for beginners and intermediate learners. We'll start from the basics and gradually move to advanced topics.</p>
           </div>
         </div>
         <div class="faq-item">
           <div class="faq-question">
-            <h3>Q: What software will I need for the course?</h3>
-            <span class="toggle-icon">+</span>
+            <h3>What software will I need for the course?</h3>
+            <i class="fas fa-chevron-down"></i>
           </div>
           <div class="faq-answer">
-            <p>A: You'll get free access to all the paid software required for the course. No additional costs!</p>
+            <p>You'll get free access to all the paid software required for the course. No additional costs!</p>
           </div>
         </div>
         <div class="faq-item">
           <div class="faq-question">
-            <h3>Q: Can I learn at my own pace?</h3>
-            <span class="toggle-icon">+</span>
+            <h3>Can I learn at my own pace?</h3>
+            <i class="fas fa-chevron-down"></i>
           </div>
           <div class="faq-answer">
-            <p>A: Yes, the course is self-paced. You can complete it in as little as a month or take longer if needed.</p>
-          </div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-question">
-            <h3>Q: How do I book a 1-on-1 session with Actual Lawal?</h3>
-            <span class="toggle-icon">+</span>
-          </div>
-          <div class="faq-answer">
-            <p>A: Contact me on WhatsApp to schedule your session after payment.</p>
-          </div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-question">
-            <h3>Q: What if I have questions during the course?</h3>
-            <span class="toggle-icon">+</span>
-          </div>
-          <div class="faq-answer">
-            <p>A: You can reach out to me via WhatsApp for support.</p>
+            <p>Yes, the course is self-paced. You can complete it in as little as a month or take longer if needed.</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Footer Section -->
+  <!-- Footer -->
   <footer>
-    <div class="container">
-      <p>&copy; 2025 Actual Lawal. All rights reserved.</p>
+    <div class="container footer-content">
       <div class="social-links">
-        <a href="https://facebook.com/actuallawal" target="_blank"><i class="fab fa-facebook"></i></a>
-        <a href="https://twitter.com/actuallawal" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="https://facebook.com/actuallawal" target="_blank"><i class="fab fa-facebook-f"></i></a>
         <a href="https://instagram.com/actuallawal" target="_blank"><i class="fab fa-instagram"></i></a>
-        <a href="https://youtube.com/@ActualLawal" target="_blank"><i class="fab fa-youtube"></i></a>
-        <a href="https://www.tiktok.com/@actuallawal" target="_blank" rel="noopener noreferrer"><i class="fab fa-tiktok"></i>
-    </a>
+        <a href="https://tiktok.com/@actuallawal" target="_blank"><i class="fab fa-tiktok"></i></a>
+        <a href="https://youtube.com/@actuallawal" target="_blank"><i class="fab fa-youtube"></i></a>
       </div>
+      <p class="copyright">© 2025 Actual Lawal. All rights reserved.</p>
     </div>
   </footer>
 
-  <!-- Scroll to Top Button -->
-  <div class="scroll-to-top">
-    <i class="fas fa-arrow-up"></i>
-  </div>
-
   <!-- Payment Modal -->
-  <div id="paymentModal" class="modal">
+  <div class="modal" id="paymentModal">
     <div class="modal-content">
       <span class="close-modal" onclick="closePaymentModal()">&times;</span>
       <h3>Complete Your Enrollment</h3>
@@ -882,24 +990,24 @@
         
         <div class="form-group">
           <label for="customerName">Full Name</label>
-          <input type="text" id="customerName" required placeholder="Enter your full name">
+          <input type="text" id="customerName" class="form-control" required placeholder="Enter your full name">
         </div>
         
         <div class="form-group">
           <label for="customerEmail">Email Address</label>
-          <input type="email" id="customerEmail" required placeholder="Enter your email address">
+          <input type="email" id="customerEmail" class="form-control" required placeholder="Enter your email">
         </div>
         
         <div class="form-group">
           <label for="customerPhone">Phone Number</label>
-          <input type="tel" id="customerPhone" required placeholder="Enter your phone number">
+          <input type="tel" id="customerPhone" class="form-control" required placeholder="Enter your phone number">
         </div>
         
         <div class="spinner" id="paymentSpinner"></div>
         
         <div class="modal-buttons">
-          <button type="button" class="cancel-btn" onclick="closePaymentModal()">Cancel</button>
-          <button type="submit" class="paystack-button">Proceed to Payment</button>
+          <button type="button" class="btn-futuristic" onclick="closePaymentModal()">Cancel</button>
+          <button type="submit" class="btn-futuristic">Proceed to Payment</button>
         </div>
       </form>
     </div>
@@ -907,143 +1015,98 @@
 
   <!-- JavaScript -->
   <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      // Smooth Scroll for Navigation Links
-      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-        anchor.addEventListener('click', function (e) {
-          e.preventDefault();
-          document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth',
-          });
-        });
-      });
-
-      // FAQ Accordion Toggle
-      const faqItems = document.querySelectorAll('.faq-item');
-
-      faqItems.forEach((item) => {
-        const question = item.querySelector('.faq-question');
-        question.addEventListener('click', () => {
-          // Close all other FAQ items
-          faqItems.forEach((otherItem) => {
-            if (otherItem !== item) {
-              otherItem.classList.remove('active');
-            }
-          });
-
-          // Toggle the clicked FAQ item
-          item.classList.toggle('active');
-        });
-      });
-
-      // Scroll to Top Button
-      const scrollToTopBtn = document.querySelector('.scroll-to-top');
-
-      if (scrollToTopBtn) {
-        scrollToTopBtn.addEventListener('click', () => {
-          window.scrollTo({
-            top: 0,
-            behavior: 'smooth',
-          });
-        });
-
-        // Show/hide the scroll-to-top button based on scroll position
-        window.addEventListener('scroll', () => {
-          if (window.scrollY > 300) {
-            scrollToTopBtn.style.display = 'block';
-          } else {
-            scrollToTopBtn.style.display = 'none';
-          }
-        });
+    // Create animated stars
+    function createStars() {
+      const starsContainer = document.getElementById('stars');
+      const starsCount = 100;
+      
+      for (let i = 0; i < starsCount; i++) {
+        const star = document.createElement('div');
+        star.classList.add('star');
+        
+        // Random properties
+        const size = Math.random() * 3;
+        const duration = 3 + Math.random() * 5;
+        const opacity = 0.5 + Math.random() * 0.5;
+        const posX = Math.random() * 100;
+        const posY = Math.random() * 100;
+        const delay = Math.random() * 5;
+        
+        star.style.width = `${size}px`;
+        star.style.height = `${size}px`;
+        star.style.left = `${posX}%`;
+        star.style.top = `${posY}%`;
+        star.style.setProperty('--duration', `${duration}s`);
+        star.style.setProperty('--opacity', opacity);
+        star.style.animationDelay = `${delay}s`;
+        
+        starsContainer.appendChild(star);
       }
-
-      // Toggle Mobile Navigation
-      const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-      const mobileNav = document.querySelector('.mobile-nav');
-
-      if (mobileMenuBtn && mobileNav) {
-        mobileMenuBtn.addEventListener('click', () => {
-          mobileNav.classList.toggle('active');
-          mobileMenuBtn.classList.toggle('active');
-        });
-
-        // Close mobile nav when a link is clicked
-        const mobileNavLinks = document.querySelectorAll('.mobile-nav a');
-        mobileNavLinks.forEach((link) => {
-          link.addEventListener('click', () => {
-            mobileNav.classList.remove('active');
-            mobileMenuBtn.classList.remove('active');
-          });
-        });
-      }
-    });
-
-    // Paystack Integration
-    function payWithPaystack(amount, planName) {
-      const handler = PaystackPop.setup({
-        key: 'pk_live_bab837f46c02f8acfd170f322780645bd132f5fe', // Replace with your Paystack public key
-        email: 'customer@email.com', // Customer's email (you can collect this in a form)
-        amount: amount, // Amount in kobo
-        currency: 'NGN',
-        ref: 'AL-' + Math.floor(Math.random() * 1000000000 + 1), // Generate a unique reference
-        plan: planName,
-        callback: function(response) {
-          // Handle successful payment
-          alert('Payment complete! Reference: ' + response.reference);
-          // You can redirect to a success page or show a success message
-          window.location.href = 'success.html?reference=' + response.reference;
-        },
-        onClose: function() {
-          // Handle when the user closes the payment modal
-          alert('Payment window closed.');
-        }
-      });
-      handler.openIframe();
     }
     
-    // Payment Modal Functions
-    let currentPlanAmount = 0;
-    let currentPlanName = '';
-
-    function showPaymentModal(amount, planName) {
-      currentPlanAmount = amount;
-      currentPlanName = planName;
+    // Mobile menu toggle
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileNav = document.getElementById('mobileNav');
+    
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileNav.classList.toggle('active');
+    });
+    
+    // FAQ accordion
+    const faqItems = document.querySelectorAll('.faq-item');
+    
+    faqItems.forEach(item => {
+      const question = item.querySelector('.faq-question');
       
+      question.addEventListener('click', () => {
+        // Close all other items
+        faqItems.forEach(otherItem => {
+          if (otherItem !== item) {
+            otherItem.classList.remove('active');
+          }
+        });
+        
+        // Toggle current item
+        item.classList.toggle('active');
+      });
+    });
+    
+    // Payment modal functions
+    function showPaymentModal(amount, planName) {
       document.getElementById('planAmount').value = amount;
       document.getElementById('planName').value = planName;
-      document.getElementById('paymentModal').style.display = 'block';
-      document.body.style.overflow = 'hidden'; // Prevent scrolling
+      document.getElementById('paymentModal').style.display = 'flex';
     }
-
+    
     function closePaymentModal() {
       document.getElementById('paymentModal').style.display = 'none';
-      document.body.style.overflow = 'auto'; // Re-enable scrolling
     }
-
-    // Handle form submission
+    
+    // Form submission
     document.getElementById('paymentForm').addEventListener('submit', function(e) {
       e.preventDefault();
       
       const name = document.getElementById('customerName').value;
       const email = document.getElementById('customerEmail').value;
       const phone = document.getElementById('customerPhone').value;
+      const amount = document.getElementById('planAmount').value;
+      const planName = document.getElementById('planName').value;
       
-      // Validate email first
+      // Validate email
       if (!validateEmail(email)) {
-        alert("Please enter a valid email address");
+        alert('Please enter a valid email address');
         return;
       }
       
-      // Show loading spinner
+      // Show spinner
       document.getElementById('paymentSpinner').style.display = 'block';
       
       // Process payment with Paystack
-      payWithPaystack(currentPlanAmount, currentPlanName, email, name, phone);
+      payWithPaystack(amount, planName, email, name, phone);
     });
-
-    // SINGLE UPDATED Paystack Integration Function
+    
+    // Paystack payment function
     function payWithPaystack(amount, planName, email, name, phone) {
-      // Use your LIVE key (ensure it's correct)
       const handler = PaystackPop.setup({
         key: 'pk_live_bab837f46c02f8acfd170f322780645bd132f5fe',
         email: email,
@@ -1078,6 +1141,7 @@
           
           // Handle successful payment
           alert('Payment complete! Reference: ' + response.reference);
+          // Redirect to success page
           window.location.href = 'success.html?reference=' + response.reference;
         },
         onClose: function() {
@@ -1093,19 +1157,43 @@
       
       handler.openIframe();
     }
-
+    
+    // Email validation
     function validateEmail(email) {
       const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       return re.test(email);
     }
-
-    // Close modal if clicked outside
+    
+    // Close modal when clicking outside
     window.onclick = function(event) {
       const modal = document.getElementById('paymentModal');
       if (event.target == modal) {
         closePaymentModal();
       }
     }
+    
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+        
+        if (targetElement) {
+          // Close mobile menu if open
+          mobileNav.classList.remove('active');
+          
+          window.scrollTo({
+            top: targetElement.offsetTop - 80,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+    
+    // Initialize stars when page loads
+    window.addEventListener('load', createStars);
   </script>
 </body>
 </html>
