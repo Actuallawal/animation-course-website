@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Golden Black Animation | Premium 2D Animation Course</title>
+  <title>Actual Lawal Animation | Premium 2D Animation Course</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
   <script src="https://js.paystack.co/v1/inline.js"></script>
@@ -1322,7 +1322,7 @@
         </div>
         <h3>Animation Principles</h3>
         <ul class="highlight-features">
-          <li>12 core animation principles</li>
+          <li>Animation principles</li>
           <li>Advanced timing and spacing</li>
           <li>Weight and physics simulation</li>
           <li>Walk cycles and character movement</li>
@@ -1486,7 +1486,7 @@
       </div>
     </div>
     
-    <div class="faq-item">
+    <!-- <div class="faq-item">
       <div class="faq-question">
         <h3>Is there a money-back guarantee?</h3>
         <div class="icon">
@@ -1496,14 +1496,13 @@
       <div class="faq-answer">
         <p>We offer a 14-day satisfaction guarantee:</p>
         <ul>
-          <li>Complete the first 3 modules</li>
-          <li>Submit the practice assignments</li>
+          <li>Complete the first 3 topics</li>
           <li>If not satisfied, we'll refund 100% of your payment</li>
           <li>No questions asked - we believe in the quality of our program</li>
         </ul>
         <p>Over 95% of students continue after the trial period.</p>
       </div>
-    </div>
+    </div> -->
   </div>
 </section>
 
@@ -1614,59 +1613,6 @@
         item.classList.toggle('active');
       });
     });
-    
-    document.addEventListener('DOMContentLoaded', function() {
-  // Countdown Timer Functionality
-  function updateCountdown() {
-    // Set end date (3 days from now)
-    const endDate = new Date();
-    endDate.setDate(endDate.getDate() + 3);
-    
-    const now = new Date();
-    const timeLeft = endDate - now;
-    
-    // Get elements safely
-    const daysEl = document.getElementById('days');
-    const hoursEl = document.getElementById('hours');
-    const minutesEl = document.getElementById('minutes');
-    const secondsEl = document.getElementById('seconds');
-    const countdownTimer = document.querySelector('.countdown-timer');
-    const countdownTitle = document.querySelector('.countdown-section h3');
-    
-    // Check if elements exist
-    if (!daysEl || !hoursEl || !minutesEl || !secondsEl) {
-      console.error("Countdown elements not found!");
-      return;
-    }
-    
-    if (timeLeft <= 0) {
-      if (countdownTitle) countdownTitle.textContent = "Offer Has Expired!";
-      if (countdownTimer) countdownTimer.style.display = 'none';
-      return;
-    }
-    
-    const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
-    
-    daysEl.textContent = days.toString().padStart(2, '0');
-    hoursEl.textContent = hours.toString().padStart(2, '0');
-    minutesEl.textContent = minutes.toString().padStart(2, '0');
-    secondsEl.textContent = seconds.toString().padStart(2, '0');
-  }
-
-  // Only start if elements exist
-  if (document.getElementById('days')) {
-    // Update countdown every second
-    setInterval(updateCountdown, 1000);
-    updateCountdown(); // Initial call
-    console.log("Countdown timer initialized!");
-  } else {
-    console.warn("Countdown elements not found - timer not initialized");
-  }
-});
-
 
     // Animate on scroll
     const animateElements = () => {
@@ -1945,6 +1891,82 @@ paymentForm.addEventListener('submit', function(e) {
         });
       });
     });
+
+    // Countdown Timer with Debugging
+function initializeCountdown() {
+  console.log("Initializing countdown timer...");
+  
+  // Get all required elements
+  const daysEl = document.getElementById('days');
+  const hoursEl = document.getElementById('hours');
+  const minutesEl = document.getElementById('minutes');
+  const secondsEl = document.getElementById('seconds');
+  const countdownTitle = document.querySelector('.countdown-section h3');
+  const countdownTimer = document.querySelector('.countdown-timer');
+
+  // Debug: Log element status
+  console.log({
+    daysEl: daysEl ? "Found" : "Missing",
+    hoursEl: hoursEl ? "Found" : "Missing",
+    minutesEl: minutesEl ? "Found" : "Missing",
+    secondsEl: secondsEl ? "Found" : "Missing",
+    countdownTitle: countdownTitle ? "Found" : "Missing",
+    countdownTimer: countdownTimer ? "Found" : "Missing"
+  });
+
+  // Verify all elements exist
+  if (!daysEl || !hoursEl || !minutesEl || !secondsEl || !countdownTitle || !countdownTimer) {
+    console.error("❌ Error: Missing countdown elements!");
+    return false;
+  }
+
+  console.log("✅ All countdown elements found");
+
+  // Set end date (3 days from now)
+  const endDate = new Date();
+  endDate.setDate(endDate.getDate() + 3);
+  console.log("Countdown end date:", endDate);
+
+  function updateCountdown() {
+    const now = new Date();
+    const timeLeft = endDate - now;
+    
+    // Calculate time units
+    const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+    
+    // Update DOM
+    daysEl.textContent = days.toString().padStart(2, '0');
+    hoursEl.textContent = hours.toString().padStart(2, '0');
+    minutesEl.textContent = minutes.toString().padStart(2, '0');
+    secondsEl.textContent = seconds.toString().padStart(2, '0');
+    
+    // Check if expired
+    if (timeLeft <= 0) {
+      countdownTitle.textContent = "Offer Has Expired!";
+      countdownTimer.style.display = 'none';
+      clearInterval(timerInterval);
+      console.log("⏰ Countdown expired!");
+    }
+  }
+
+  // Start the countdown
+  updateCountdown(); // Run immediately
+  const timerInterval = setInterval(updateCountdown, 1000);
+  console.log("🚀 Countdown timer started successfully!");
+  return true;
+}
+
+// Start when DOM is fully loaded
+if (document.readyState === 'complete' || document.readyState === 'interactive') {
+  // DOM already ready
+  setTimeout(initializeCountdown, 0);
+} else {
+  document.addEventListener('DOMContentLoaded', initializeCountdown);
+}
+
   </script>
 </body>
 </html>
