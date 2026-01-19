@@ -1,1972 +1,718 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Actual Lawal Animation | Premium 2D Animation Course</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
-  <script src="https://js.paystack.co/v1/inline.js"></script>
-  <link rel="icon" type="image/png" href="https://i.ibb.co/PvnNSJTL/Kidnapped-Merch-head.png">
-  <style>
-    /* Golden Black Color Scheme */
-    :root {
-      --gold-primary: #AE8B0F;
-      --gold-secondary: #DBB12A;
-      --black-primary: #150E03;
-      --black-secondary: #30250B;
-      --brown-accent: #734B1A;
-      --paper: #FFFDF5;
-    }
-
-    /* Base Styles */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    /* Countdown Timer Styles */
-.countdown-section {
-  background: var(--black-secondary);
-  padding: 20px 0;
-  border-top: 1px solid var(--gold-primary);
-  border-bottom: 1px solid var(--gold-primary);
-  text-align: center;
-}
-
-.countdown-container {
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.countdown-section h3 {
-  color: var(--gold-secondary);
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 500;
-  margin-bottom: 15px;
-  font-size: 1.2rem;
-}
-
-.countdown-timer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 15px;
-}
-
-.countdown-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  min-width: 70px;
-}
-
-.countdown-item span:first-child {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 2.5rem;
-  color: var(--gold-primary);
-  line-height: 1;
-}
-
-.countdown-label {
-  font-size: 0.8rem;
-  color: var(--paper);
-  opacity: 0.8;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-.countdown-separator {
-  font-size: 2rem;
-  color: var(--gold-primary);
-  margin-top: -15px;
-}
-
-.countdown-note {
-  color: var(--gold-secondary);
-  font-size: 0.9rem;
-  font-style: italic;
-}
-
-@media (max-width: 768px) {
-  .countdown-item {
-    min-width: 50px;
-  }
-  
-  .countdown-item span:first-child {
-    font-size: 2rem;
-  }
-  
-  .countdown-separator {
-    font-size: 1.5rem;
-    margin-top: -10px;
-  }
-}
-
-    body {
-      font-family: 'Montserrat', sans-serif;
-      background-color: var(--black-primary);
-      color: var(--paper);
-      line-height: 1.7;
-      overflow-x: hidden;
-      scroll-behavior: smooth;
-    }
-
-    h1, h2, h3, h4 {
-      font-family: 'Bebas Neue', sans-serif;
-      letter-spacing: 1px;
-      color: var(--gold-primary);
-    }
-
-    h1 {
-      font-size: clamp(3rem, 6vw, 5rem);
-      line-height: 1;
-    }
-
-    h2 {
-      font-size: 2.5rem;
-      margin-bottom: 1.5rem;
-      position: relative;
-      display: inline-block;
-    }
-
-    h2::after {
-      content: '';
-      position: absolute;
-      bottom: -10px;
-      left: 0;
-      width: 100%;
-      height: 3px;
-      background: var(--gold-secondary);
-    }
-
-    .container {
-      width: 90%;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-
-    section {
-      padding: 100px 0;
-      position: relative;
-    }
-
-    /* Doodle Elements */
-    .doodle {
-      position: absolute;
-      z-index: 1;
-      opacity: 0.8;
-      pointer-events: none;
-    }
-
-    .doodle-star {
-      color: var(--gold-secondary);
-      font-size: 1.5rem;
-      animation: float 4s ease-in-out infinite;
-    }
-
-    .doodle-squiggle {
-      stroke: var(--gold-primary);
-      stroke-width: 2;
-      fill: none;
-    }
-
-    /* Add to your existing CSS */
-.highlight-cards {
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-}
-
-.highlight-features {
-  list-style: none;
-  margin-top: 20px;
-}
-
-.highlight-features li {
-  position: relative;
-  padding-left: 25px;
-  margin-bottom: 10px;
-  font-size: 0.95rem;
-}
-
-.highlight-features li:before {
-  content: "•";
-  position: absolute;
-  left: 0;
-  color: var(--gold-primary);
-  font-weight: bold;
-  font-size: 1.2rem;
-}
-
-.section-subtitle {
-  text-align: center;
-  margin-bottom: 40px;
-  color: var(--gold-secondary);
-  font-size: 1.1rem;
-  max-width: 700px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-    @keyframes float {
-      0%, 100% { transform: translateY(0) rotate(0deg); }
-      50% { transform: translateY(-15px) rotate(5deg); }
-    }
-
-    /* Professional Button */
-    .btn-gold {
-      display: inline-block;
-      padding: 15px 40px;
-      background: linear-gradient(135deg, var(--gold-primary), var(--gold-secondary));
-      color: var(--black-primary);
-      border: none;
-      border-radius: 0;
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 1.3rem;
-      letter-spacing: 1px;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      position: relative;
-      overflow: hidden;
-      box-shadow: 0 5px 15px rgba(174, 139, 15, 0.3);
-    }
-
-    .btn-gold:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 8px 20px rgba(174, 139, 15, 0.4);
-    }
-
-    .btn-gold:active {
-      transform: translateY(1px);
-    }
-
-    .btn-gold::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-      transition: 0.5s;
-    }
-
-    .btn-gold:hover::before {
-      left: 100%;
-    }
-
-    /* Header */
-    header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      z-index: 1000;
-      background: rgba(21, 14, 3, 0.95);
-      padding: 20px 0;
-      border-bottom: 1px solid var(--gold-primary);
-      backdrop-filter: blur(5px);
-    }
-
-    .header-container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .logo {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 2rem;
-      color: var(--gold-primary);
-      letter-spacing: 2px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .logo img {
-      height: 40px;
-      width: auto;
-      transition: transform 0.3s ease;
-    }
-
-    .logo:hover img {
-      transform: rotate(-10deg);
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 30px;
-    }
-
-    .nav-links a {
-      color: var(--paper);
-      text-decoration: none;
-      font-weight: 500;
-      position: relative;
-      padding: 5px 0;
-      transition: color 0.3s ease;
-    }
-
-    .nav-links a:hover {
-      color: var(--gold-secondary);
-    }
-
-    .nav-links a::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 0;
-      height: 2px;
-      background: var(--gold-primary);
-      transition: width 0.3s ease;
-    }
-
-    .nav-links a:hover::after {
-      width: 100%;
-    }
-
-    /* Hero Section */
-    .hero {
-      height: 100vh;
-      display: flex;
-      align-items: center;
-      background: linear-gradient(rgba(21, 14, 3, 0.9), rgba(21, 14, 3, 0.9)), 
-                  url('https://images.unsplash.com/photo-1626785774573-4b799315345d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
-      background-size: cover;
-      background-position: center;
-      text-align: center;
-      position: relative;
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 2;
-    }
-
-    .hero h1 {
-      margin-bottom: 20px;
-      text-shadow: 3px 3px 0 var(--black-secondary);
-      animation: fadeInUp 1s ease-out;
-    }
-
-    .hero p {
-      font-size: 1.2rem;
-      max-width: 700px;
-      margin: 0 auto 30px;
-      color: var(--paper);
-      animation: fadeInUp 1s ease-out 0.2s forwards;
-      opacity: 0;
-    }
-
-    /* Enhanced Reels Section */
-    .reels-section {
-      background: var(--black-primary);
-      padding: 80px 0;
-      position: relative;
-      overflow: hidden;
-    }
-    
-    .reels-section .section-subtitle {
-      text-align: center;
-      margin-bottom: 40px;
-      color: var(--gold-secondary);
-      font-size: 1.1rem;
-      max-width: 700px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    
-    .reels-controls {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 20px;
-      margin-bottom: 30px;
-    }
-    
-    .reels-nav-btn {
-      background: var(--gold-primary);
-      color: var(--black-primary);
-      border: none;
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      flex-shrink: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.2rem;
-      box-shadow: 0 4px 10px rgba(174, 139, 15, 0.3);
-    }
-    
-    .reels-nav-btn:hover {
-      background: var(--gold-secondary);
-      transform: scale(1.1);
-    }
-    
-    .reels-container {
-      display: flex;
-      gap: 25px;
-      overflow-x: auto;
-      scroll-snap-type: x mandatory;
-      -webkit-overflow-scrolling: touch;
-      scroll-behavior: smooth;
-      padding: 20px 0;
-      width: 100%;
-      scrollbar-width: none;
-    }
-    
-    .reels-container::-webkit-scrollbar {
-      display: none;
-    }
-    
-    .reel-embed {
-      flex: 0 0 320px;
-      height: 568px;
-      scroll-snap-align: start;
-      position: relative;
-      overflow: hidden;
-      border: 3px solid var(--gold-primary);
-      border-radius: 12px;
-      transition: all 0.4s ease;
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
-    }
-    
-    .reel-embed:hover {
-      transform: translateY(-5px) scale(1.02);
-      box-shadow: 0 12px 30px rgba(219, 177, 42, 0.25);
-    }
-    
-    .reel-embed iframe {
-      width: 100%;
-      height: 100%;
-      border: none;
-      pointer-events: none;
-    }
-    
-    .reel-overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(21, 14, 3, 0.6);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 2;
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
-    
-    .reel-overlay:hover {
-      background: rgba(21, 14, 3, 0.4);
-    }
-    
-    .play-icon {
-      color: var(--gold-primary);
-      font-size: 3.5rem;
-      opacity: 0.9;
-      transition: all 0.3s ease;
-      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-    }
-    
-    .reel-overlay:hover .play-icon {
-      transform: scale(1.2);
-      opacity: 1;
-    }
-    
-    .reel-embed.playing .reel-overlay {
-      opacity: 0;
-      pointer-events: none;
-    }
-    
-    .reels-pagination {
-      display: flex;
-      justify-content: center;
-      gap: 12px;
-      margin-top: 30px;
-    }
-    
-    .reel-dot {
-      width: 14px;
-      height: 14px;
-      border-radius: 50%;
-      background: var(--black-secondary);
-      border: 2px solid var(--gold-primary);
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
-    
-    .reel-dot.active {
-      background: var(--gold-primary);
-      transform: scale(1.2);
-    }
-
-    /* Course Highlights */
-    .highlights {
-      background: var(--black-secondary);
-      padding: 80px 0;
-      position: relative;
-    }
-
-    .highlight-cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 30px;
-      margin-top: 50px;
-    }
-
-    .highlight-card {
-      background: var(--black-primary);
-      border: 1px solid var(--gold-primary);
-      padding: 40px 30px;
-      position: relative;
-      transition: all 0.4s ease;
-      overflow: hidden;
-    }
-
-    .highlight-card::before {
-      content: '';
-      position: absolute;
-      top: -50%;
-      left: -50%;
-      width: 200%;
-      height: 200%;
-      background: linear-gradient(
-        to bottom right,
-        transparent,
-        transparent,
-        transparent,
-        rgba(219, 177, 42, 0.1)
-      );
-      transform: rotate(30deg);
-      transition: all 0.6s ease;
-    }
-
-    .highlight-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 15px 35px rgba(174, 139, 15, 0.2);
-    }
-
-    .highlight-card:hover::before {
-      transform: rotate(30deg) translate(-20px, 20px);
-    }
-
-    .highlight-icon {
-      font-size: 2.5rem;
-      color: var(--gold-primary);
-      margin-bottom: 20px;
-      transition: transform 0.3s ease;
-    }
-
-    .highlight-card:hover .highlight-icon {
-      transform: rotate(15deg) scale(1.1);
-    }
-
-    /* FAQ Section - Enhanced */
-    .faq-section {
-      background: var(--black-secondary);
-    }
-
-    .faq-container {
-      max-width: 800px;
-      margin: 0 auto;
-    }
-
-    .faq-item {
-      margin-bottom: 20px;
-      border: 1px solid var(--gold-primary);
-      transition: all 0.4s ease;
-      border-radius: 4px;
-      overflow: hidden;
-    }
-
-    .faq-item.active {
-      border-color: var(--gold-secondary);
-      box-shadow: 0 5px 15px rgba(219, 177, 42, 0.1);
-    }
-
-    .faq-question {
-      padding: 25px;
-      background: var(--black-primary);
-      cursor: pointer;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      transition: all 0.4s ease;
-    }
-
-    .faq-item.active .faq-question {
-      background: rgba(174, 139, 15, 0.1);
-    }
-
-    .faq-question h3 {
-      font-size: 1.3rem;
-      color: var(--gold-primary);
-      transition: color 0.3s ease;
-    }
-
-    .faq-question:hover h3 {
-      color: var(--gold-secondary);
-    }
-
-    .faq-question .icon {
-      color: var(--gold-primary);
-      transition: transform 0.4s ease;
-    }
-
-    .faq-item.active .faq-question .icon {
-      transform: rotate(180deg);
-    }
-
-    .faq-answer {
-      padding: 0 25px;
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.4s ease, padding 0.4s ease;
-    }
-
-    .faq-item.active .faq-answer {
-      padding: 25px;
-      max-height: 1000px;
-    }
-
-    .faq-answer p {
-      margin-bottom: 15px;
-    }
-
-    .faq-answer ul {
-      margin-left: 20px;
-      margin-bottom: 15px;
-    }
-
-    .faq-answer li {
-      margin-bottom: 8px;
-      position: relative;
-      padding-left: 20px;
-    }
-
-    .faq-answer li::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 8px;
-      width: 8px;
-      height: 8px;
-      background: var(--gold-primary);
-      border-radius: 50%;
-    }
-
-    /* Pricing Section */
-    .pricing-plans {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-      gap: 30px;
-      margin-top: 50px;
-    }
-
-    .pricing-card {
-      background: var(--black-secondary);
-      border: 1px solid var(--gold-primary);
-      padding: 40px 30px;
-      position: relative;
-      transition: all 0.4s ease;
-      overflow: hidden;
-    }
-
-    .pricing-card::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      right: 0;
-      width: 100%;
-      height: 5px;
-      background: var(--gold-primary);
-      transform: translateY(5px);
-      transition: transform 0.3s ease;
-    }
-
-    .pricing-card:hover::after {
-      transform: translateY(0);
-    }
-
-    .pricing-card.popular {
-      border: 2px solid var(--gold-secondary);
-      transform: scale(1.02);
-    }
-
-    .pricing-card.popular::before {
-      content: 'BEST VALUE';
-      position: absolute;
-      top: -12px;
-      right: 20px;
-      background: var(--gold-primary);
-      color: var(--black-primary);
-      padding: 5px 15px;
-      font-family: 'Bebas Neue', sans-serif;
-      letter-spacing: 1px;
-      font-size: 0.9rem;
-      z-index: 2;
-    }
-
-    .price {
-      font-size: 2.5rem;
-      font-family: 'Bebas Neue', sans-serif;
-      color: var(--gold-primary);
-      margin: 20px 0;
-    }
-
-    .price .old-price {
-      text-decoration: line-through;
-      color: var(--paper);
-      opacity: 0.7;
-      font-size: 1.5rem;
-    }
-
-    .price .new-price {
-      color: var(--gold-secondary);
-    }
-
-    .pricing-features {
-      list-style: none;
-      margin: 30px 0;
-    }
-
-    .pricing-features li {
-      margin-bottom: 15px;
-      position: relative;
-      padding-left: 30px;
-      transition: transform 0.3s ease;
-    }
-
-    .pricing-features li:hover {
-      transform: translateX(5px);
-    }
-
-    .pricing-features li::before {
-      content: '›';
-      position: absolute;
-      left: 0;
-      color: var(--gold-primary);
-      font-weight: bold;
-      font-size: 1.2rem;
-    }
-
-    /* Enhanced Payment Modal Styles */
-.modal {
-  display: none; /* Start hidden */
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.9);
-  z-index: 2000;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.modal.show {
-  opacity: 1;
-}
-
-.modal-content {
-  background: var(--black-secondary);
-  padding: 40px;
-  border: 2px solid var(--gold-primary);
-  max-width: 500px;
-  width: 90%;
-  position: relative;
-  transform: translateY(20px);
-  transition: transform 0.3s ease;
-  box-shadow: 0 10px 30px rgba(174, 139, 15, 0.2);
-}
-
-.modal.show .modal-content {
-  transform: translateY(0);
-}
-
-.modal.show .modal-content {
-  transform: translateY(0);
-}
-
-.close-modal {
-  position: absolute;
-  top: 15px;
-  right: 15px;
-  color: var(--gold-primary);
-  font-size: 1.5rem;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  background: none;
-  border: none;
-}
-
-.close-modal:hover {
-  color: var(--gold-secondary);
-  transform: rotate(90deg);
-}
-
-.payment-form {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.form-group {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.form-group label {
-  font-weight: 500;
-  color: var(--gold-primary);
-  font-family: 'Montserrat', sans-serif;
-}
-
-.form-group input {
-  padding: 12px 15px;
-  background: var(--black-primary);
-  border: 1px solid var(--gold-primary);
-  color: var(--paper);
-  font-family: 'Montserrat', sans-serif;
-  transition: all 0.3s ease;
-  font-size: 1rem;
-}
-
-.form-group input:focus {
-  outline: none;
-  border-color: var(--gold-secondary);
-  box-shadow: 0 0 0 2px rgba(219, 177, 42, 0.3);
-}
-
-/* Payment Security Badge */
-.payment-security {
-  text-align: center;
-  margin-top: 30px;
-  padding-top: 20px;
-  border-top: 1px solid rgba(219, 177, 42, 0.3);
-}
-
-.payment-security p {
-  color: var(--gold-secondary);
-  font-size: 0.9rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-}
-
-.payment-security i {
-  font-size: 1.2rem;
-}
-
-/* Payment Processing State */
-.payment-processing {
-  display: none;
-  text-align: center;
-  padding: 20px;
-}
-
-.payment-processing i {
-  font-size: 2rem;
-  color: var(--gold-primary);
-  margin-bottom: 15px;
-  animation: spin 1s linear infinite;
-}
-
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-
-/* Payment Success Message */
-.payment-success {
-  display: none;
-  text-align: center;
-  padding: 20px;
-}
-
-.payment-success i {
-  font-size: 2.5rem;
-  color: #4CAF50;
-  margin-bottom: 15px;
-}
-
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-  .modal-content {
-    padding: 30px 20px;
-  }
-  
-  .payment-form {
-    gap: 15px;
-  }
-  
-  .form-group input {
-    padding: 10px 12px;
-  }
-}
-
-@media (max-width: 480px) {
-  .modal-content {
-    width: 95%;
-    padding: 25px 15px;
-  }
-  
-  .payment-security p {
-    font-size: 0.8rem;
-  }
-}
-
-    /* Footer */
-    footer {
-      background: var(--black-primary);
-      padding: 60px 0 30px;
-      border-top: 1px solid var(--gold-primary);
-      text-align: center;
-      position: relative;
-    }
-
-    .social-links {
-      display: flex;
-      justify-content: center;
-      gap: 25px;
-      margin-bottom: 30px;
-    }
-
-    .social-links a {
-      color: var(--paper);
-      font-size: 1.5rem;
-      transition: all 0.3s ease;
-      position: relative;
-    }
-
-    .social-links a:hover {
-      color: var(--gold-primary);
-      transform: translateY(-5px);
-    }
-
-    .social-links a::after {
-      content: '';
-      position: absolute;
-      bottom: -5px;
-      left: 0;
-      width: 100%;
-      height: 2px;
-      background: var(--gold-primary);
-      transform: scaleX(0);
-      transition: transform 0.3s ease;
-    }
-
-    .social-links a:hover::after {
-      transform: scaleX(1);
-    }
-
-    .copyright {
-      color: var(--paper);
-      opacity: 0.7;
-      font-size: 0.9rem;
-    }
-
-    /* Responsive Design */
-    @media (max-width: 768px) {
-      .nav-links {
-        display: none;
-        position: absolute;
-        top: 80px;
-        left: 0;
-        width: 100%;
-        background: var(--black-primary);
-        flex-direction: column;
-        padding: 20px;
-        gap: 15px;
-        border-bottom: 1px solid var(--gold-primary);
-      }
-      
-      .nav-links.active {
-        display: flex;
-      }
-      
-      .mobile-menu-btn {
-        display: block;
-        background: none;
-        border: none;
-        color: var(--gold-primary);
-        font-size: 1.5rem;
-        cursor: pointer;
-      }
-      
-      section {
-        padding: 70px 0;
-      }
-      
-      .pricing-plans {
-        grid-template-columns: 1fr;
-      }
-      
-      .pricing-card.popular {
-        transform: none;
-      }
-
-      .reel-embed {
-        flex: 0 0 280px;
-        height: 497px;
-      }
-
-      .reels-controls {
-        margin-bottom: 20px;
-      }
-
-      .reels-nav-btn {
-        width: 40px;
-        height: 40px;
-        font-size: 1rem;
-      }
-
-      .modal-content {
-        padding: 30px 20px;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .reel-embed {
-        flex: 0 0 260px;
-        height: 462px;
-      }
-
-      .hero h1 {
-        font-size: 2.5rem;
-      }
-
-      .hero p {
-        font-size: 1rem;
-      }
-    }
-
-    /* Animation Effects */
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    .animate {
-      animation: fadeInUp 0.8s ease forwards;
-    }
-
-    /* Tooltip for Doodles */
-    .tooltip {
-      position: relative;
-      display: inline-block;
-    }
-
-    .tooltip .tooltiptext {
-      visibility: hidden;
-      width: 200px;
-      background-color: var(--gold-primary);
-      color: var(--black-primary);
-      text-align: center;
-      border-radius: 4px;
-      padding: 8px;
-      position: absolute;
-      z-index: 1;
-      bottom: 125%;
-      left: 50%;
-      transform: translateX(-50%);
-      opacity: 0;
-      transition: opacity 0.3s;
-      font-family: 'Montserrat', sans-serif;
-      font-size: 0.8rem;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    }
-
-    .tooltip:hover .tooltiptext {
-      visibility: visible;
-      opacity: 1;
-    }
-</style>
-</head>
-
-  <!-- Doodle Elements -->
-  <div class="doodle doodle-star" style="top: 20%; left: 10%;">✧</div>
-  <div class="doodle doodle-star" style="top: 70%; right: 15%;">✧</div>
-  <div class="doodle doodle-star" style="bottom: 10%; left: 20%;">✧</div>
-  
-  <svg class="doodle" style="top: 30%; right: 5%; width: 100px; height: 50px;" viewBox="0 0 100 20">
-    <path class="doodle-squiggle" d="M10,10 Q25,5 40,10 T70,10 T100,10" />
-  </svg>
-
-  <!-- Payment Modal -->
-  <div class="modal" id="paymentModal">
-  <div class="modal-content">
-    <span class="close-modal" id="closeModal">&times;</span>
-    <h2 id="modalPlanTitle">Complete Your Enrollment</h2>
-    
-    <form id="paymentForm" class="payment-form">
-      <div class="form-group">
-        <label for="email">Email Address</label>
-        <input type="email" id="email" required placeholder="Enter your email">
-      </div>
-      <div class="form-group">
-        <label for="name">Full Name</label>
-        <input type="text" id="name" required placeholder="Enter your full name">
-      </div>
-      <div class="form-group">
-        <label for="phone">Phone Number</label>
-        <input type="tel" id="phone" required placeholder="Enter your phone number">
-      </div>
-      <button type="submit" class="btn-gold">PROCEED TO PAYMENT</button>
-    </form>
-    
-    <div class="payment-processing" id="paymentProcessing">
-      <i class="fas fa-spinner"></i>
-      <p>Processing your payment...</p>
-    </div>
-    
-    <div class="payment-success" id="paymentSuccess">
-      <i class="fas fa-check-circle"></i>
-      <h3>Payment Successful!</h3>
-      <p>Thank you for your enrollment. We'll contact you shortly.</p>
-    </div>
-  </div>
-</div>
-
-  <!-- Header -->
-  <header>
-    <div class="container header-container">
-      <div class="logo">
-        <img src="https://i.ibb.co/PvnNSJTL/Kidnapped-Merch-head.png" alt="Golden Black Logo">
-        ACTUAL LAWAL
-      </div>
-      <nav class="nav-links" id="navLinks">
-        <a href="#home">Home</a>
-        <a href="#reels">Our Work</a>
-        <a href="#highlights">Course</a>
-        <a href="#pricing">Pricing</a>
-        <a href="#faq">FAQ</a>
-        <a href="#contact">Contact</a>
-      </nav>
-      <button class="mobile-menu-btn" id="mobileMenuBtn">
-        <i class="fas fa-bars"></i>
-      </button>
-    </div>
-  </header>
-
-  <!-- Hero Section -->
-  <section class="hero" id="home">
-    <div class="container hero-content animate">
-      <h1>MASTER 2D ANIMATION</h1>
-      <p>Professional training for aspiring animators. Learn the techniques used by industry professionals to create stunning animations.</p>
-      <button class="btn-gold" onclick="document.getElementById('pricing').scrollIntoView({ behavior: 'smooth' })">
-        ENROLL NOW
-      </button>
-    </div>
-  </section>
-
-  <!-- Countdown Timer Section -->
-<div class="countdown-section">
-  <div class="countdown-container">
-    <h3>Limited Time Offer Ends In:</h3>
-    <div class="countdown-timer">
-      <div class="countdown-item">
-        <span id="days">03</span>
-        <span class="countdown-label">Days</span>
-      </div>
-      <div class="countdown-separator">:</div>
-      <div class="countdown-item">
-        <span id="hours">00</span>
-        <span class="countdown-label">Hours</span>
-      </div>
-      <div class="countdown-separator">:</div>
-      <div class="countdown-item">
-        <span id="minutes">00</span>
-        <span class="countdown-label">Minutes</span>
-      </div>
-      <div class="countdown-separator">:</div>
-      <div class="countdown-item">
-        <span id="seconds">00</span>
-        <span class="countdown-label">Seconds</span>
-      </div>
-    </div>
-    <p class="countdown-note">Enroll now before this offer expires!</p>
-  </div>
-</div>
-
-  <!-- Reels Section with Autoplay -->
-<section class="reels-section" id="reels">
-  <div class="container">
-    <h2>SEE OUR WORK</h2>
-    <p class="section-subtitle">Watch these sample animations created with our techniques</p>
-    
-    <div class="reels-controls">
-      <button class="reels-nav-btn" id="prevReel"><i class="fas fa-chevron-left"></i></button>
-      <div class="reels-container" id="reelsContainer">
-        <!-- Reel 1 -->
-        <div class="reel-embed">
-          <iframe src="https://www.youtube.com/embed/0YKqum-cGDE?autoplay=1&mute=1&loop=1&playlist=0YKqum-cGDE&controls=0&modestbranding=1&rel=0&playsinline=1" 
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                  allowfullscreen></iframe>
-        </div>
-        
-        <!-- Reel 2 -->
-        <div class="reel-embed">
-          <iframe src="https://www.youtube.com/embed/h1vqcP6VNw0?autoplay=1&mute=1&loop=1&playlist=h1vqcP6VNw0&controls=0&modestbranding=1&rel=0&playsinline=1" 
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                  allowfullscreen></iframe>
-        </div>
-        
-        <!-- Reel 3 -->
-        <div class="reel-embed">
-          <iframe src="https://www.youtube.com/embed/358d1oiYQTQ?autoplay=1&mute=1&loop=1&playlist=358d1oiYQTQ&controls=0&modestbranding=1&rel=0&playsinline=1" 
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                  allowfullscreen></iframe>
-        </div>
-        
-        <!-- Reel 4 -->
-        <div class="reel-embed">
-          <iframe src="https://www.youtube.com/embed/xrxKSicV9n8?autoplay=1&mute=1&loop=1&playlist=xrxKSicV9n8&controls=0&modestbranding=1&rel=0&playsinline=1" 
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                  allowfullscreen></iframe>
-        </div>
-        
-        <!-- Reel 5 -->
-        <div class="reel-embed">
-          <iframe src="https://www.youtube.com/embed/tNG6uEiApC4?autoplay=1&mute=1&loop=1&playlist=tNG6uEiApC4&controls=0&modestbranding=1&rel=0&playsinline=1" 
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                  allowfullscreen></iframe>
-        </div>
-        
-        <!-- Reel 6 -->
-        <div class="reel-embed">
-          <iframe src="https://www.youtube.com/embed/lCjSUVpXcoM?autoplay=1&mute=1&loop=1&playlist=lCjSUVpXcoM&controls=0&modestbranding=1&rel=0&playsinline=1" 
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                  allowfullscreen></iframe>
-        </div>
-        
-        <!-- Reel 7 -->
-        <div class="reel-embed">
-          <iframe src="https://www.youtube.com/embed/4dIHOew1iSc?autoplay=1&mute=1&loop=1&playlist=4dIHOew1iSc&controls=0&modestbranding=1&rel=0&playsinline=1" 
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                  allowfullscreen></iframe>
-        </div>
-        
-        <!-- Reel 8 -->
-        <div class="reel-embed">
-          <iframe src="https://www.youtube.com/embed/NJfpF2dtczg?autoplay=1&mute=1&loop=1&playlist=NJfpF2dtczg&controls=0&modestbranding=1&rel=0&playsinline=1" 
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                  allowfullscreen></iframe>
-        </div>
-        
-        <!-- Reel 9 -->
-        <div class="reel-embed">
-          <iframe src="https://www.youtube.com/embed/8KFojjpJ84M?autoplay=1&mute=1&loop=1&playlist=8KFojjpJ84M&controls=0&modestbranding=1&rel=0&playsinline=1" 
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                  allowfullscreen></iframe>
-        </div>
-        
-        <!-- Reel 10 -->
-        <div class="reel-embed">
-          <iframe src="https://www.youtube.com/embed/UfzQAvLmtYs?autoplay=1&mute=1&loop=1&playlist=UfzQAvLmtYs&controls=0&modestbranding=1&rel=0&playsinline=1" 
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                  allowfullscreen></iframe>
-        </div>
-      </div>
-      <button class="reels-nav-btn" id="nextReel"><i class="fas fa-chevron-right"></i></button>
-    </div>
-    
-    <div class="reels-pagination" id="reelsPagination"></div>
-  </div>
-</section>
-
-  <!-- Enhanced Course Highlights -->
-<section class="highlights" id="highlights">
-  <div class="container">
-    <h2>WHAT YOU'LL MASTER</h2>
-    <p class="section-subtitle">Professional techniques used by industry animators worldwide</p>
-    
-    <div class="highlight-cards">
-      <!-- Card 1 -->
-      <div class="highlight-card animate" style="animation-delay: 0.1s;">
-        <div class="highlight-icon">
-          <i class="fas fa-drafting-compass"></i>
-        </div>
-        <h3>Character Design</h3>
-        <ul class="highlight-features">
-          <li>Create memorable, expressive characters</li>
-          <li>Professional turnarounds and model sheets</li>
-          <li>Lip sync techniques for dialogue</li>
-          <li>Emotion-driven facial expressions</li>
-        </ul>
-      </div>
-      
-      <!-- Card 2 -->
-      <div class="highlight-card animate" style="animation-delay: 0.2s;">
-        <div class="highlight-icon">
-          <i class="fas fa-film"></i>
-        </div>
-        <h3>Animation Principles</h3>
-        <ul class="highlight-features">
-          <li>Animation principles</li>
-          <li>Advanced timing and spacing</li>
-          <li>Weight and physics simulation</li>
-          <li>Walk cycles and character movement</li>
-        </ul>
-      </div>
-      
-      <!-- Card 3 -->
-      <div class="highlight-card animate" style="animation-delay: 0.3s;">
-        <div class="highlight-icon">
-          <i class="fas fa-business-time"></i>
-        </div>
-        <h3>Freelance Business</h3>
-        <ul class="highlight-features">
-          <li>Client acquisition strategies</li>
-          <li>Portfolio optimization</li>
-          <li>Contract and pricing mastery</li>
-          <li>Passive income through assets</li>
-        </ul>
-      </div>
-      
-      <!-- Card 4 (New) -->
-      <div class="highlight-card animate" style="animation-delay: 0.4s;">
-        <div class="highlight-icon">
-          <i class="fas fa-lightbulb"></i>
-        </div>
-        <h3>Creative Storytelling</h3>
-        <ul class="highlight-features">
-          <li>Visual narrative techniques</li>
-          <li>Storyboarding fundamentals</li>
-          <li>Scene composition</li>
-          <li>Emotional pacing</li>
-        </ul>
-      </div>
-      
-      <!-- Card 5 (New) -->
-      <div class="highlight-card animate" style="animation-delay: 0.5s;">
-        <div class="highlight-icon">
-          <i class="fas fa-magic"></i>
-        </div>
-        <h3>Special Effects</h3>
-        <ul class="highlight-features">
-          <li>Dynamic motion effects</li>
-          <li>Particle animations</li>
-          <li>Lighting and shadows</li>
-          <li>Environmental interactions</li>
-        </ul>
-      </div>
-      
-      <!-- Card 6 (New) -->
-      <div class="highlight-card animate" style="animation-delay: 0.6s;">
-        <div class="highlight-icon">
-          <i class="fas fa-chart-line"></i>
-        </div>
-        <h3>Career Growth</h3>
-        <ul class="highlight-features">
-          <li>Industry networking</li>
-          <li>Specialization paths</li>
-          <li>Studio vs freelance</li>
-          <li>Continuous skill development</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-  <!-- Enhanced FAQ Section -->
-<section class="faq-section" id="faq">
-  <div class="container faq-container">
-    <h2>FREQUENTLY ASKED QUESTIONS</h2>
-    <p class="section-subtitle">Everything you need to know before enrolling in our animation mastery program</p>
-    
-    <div class="faq-item">
-      <div class="faq-question">
-        <h3>What will I be able to create after this course?</h3>
-        <div class="icon">
-          <i class="fas fa-chevron-down"></i>
-        </div>
-      </div>
-      <div class="faq-answer">
-        <p>By course completion, you'll be creating professional-quality animations including:</p>
-        <ul>
-          <li><strong>Character animations</strong> with fluid movement and personality</li>
-          <li><strong>Explainer videos</strong> for businesses and marketing</li>
-          <li><strong>Social media content</strong> optimized for platforms like Instagram and TikTok</li>
-          <li><strong>Short animated stories</strong> with proper scene transitions</li>
-          <li><strong>Professional motion graphics</strong> for various applications</li>
-        </ul>
-      </div>
-    </div>
-    
-    <div class="faq-item">
-      <div class="faq-question">
-        <h3>How is this different from free tutorials online?</h3>
-        <div class="icon">
-          <i class="fas fa-chevron-down"></i>
-        </div>
-      </div>
-      <div class="faq-answer">
-        <p>Our structured program offers what random tutorials can't:</p>
-        <ul>
-          <li><strong>Progressive curriculum</strong> that builds skills systematically</li>
-          <li><strong>Professional feedback</strong> on your actual work</li>
-          <li><strong>Industry insider techniques</strong> not found in free content</li>
-          <li><strong>Community support</strong> and networking opportunities</li>
-          <li><strong>Business training</strong> to monetize your animation skills</li>
-        </ul>
-      </div>
-    </div>
-    
-    <div class="faq-item">
-      <div class="faq-question">
-        <h3>What makes your teaching method effective?</h3>
-        <div class="icon">
-          <i class="fas fa-chevron-down"></i>
-        </div>
-      </div>
-      <div class="faq-answer">
-        <p>Our proven approach combines:</p>
-        <ul>
-          <li><strong>Project-based learning</strong> - Learn by creating real animations</li>
-          <li><strong>Micro-lessons</strong> - Bite-sized tutorials focused on specific skills</li>
-          <li><strong>Copywork technique</strong> - Study and recreate professional animations</li>
-          <li><strong>Personalized feedback</strong> - Get expert review of your work</li>
-          <li><strong>Community challenges</strong> - Regular exercises to practice skills</li>
-        </ul>
-      </div>
-    </div>
-    
-    <div class="faq-item">
-      <div class="faq-question">
-        <h3>What ongoing support do you provide after the course?</h3>
-        <div class="icon">
-          <i class="fas fa-chevron-down"></i>
-        </div>
-      </div>
-      <div class="faq-answer">
-        <p>Your enrollment includes lifetime access to:</p>
-        <ul>
-          <li><strong>Private community</strong> of animators for networking</li>
-          <li><strong>Content library updates</strong> with new techniques</li>
-          <li><strong>Job board</strong> with animation opportunities</li>
-        </ul>
-      </div>
-    </div>
-    
-    <div class="faq-item">
-      <div class="faq-question">
-        <h3>What results have your students achieved?</h3>
-        <div class="icon">
-          <i class="fas fa-chevron-down"></i>
-        </div>
-      </div>
-      <div class="faq-answer">
-        <p>Our graduates have:</p>
-        <ul>
-          <li>Built freelance businesses earning ₦150k+ monthly</li>
-          <li>Landed positions at top African animation studios</li>
-          <li>Created viral social media content with millions of views</li>
-        </ul>
-        <p>We share detailed case studies after enrollment.</p>
-      </div>
-    </div>
-    
-    <!-- <div class="faq-item">
-      <div class="faq-question">
-        <h3>Is there a money-back guarantee?</h3>
-        <div class="icon">
-          <i class="fas fa-chevron-down"></i>
-        </div>
-      </div>
-      <div class="faq-answer">
-        <p>We offer a 14-day satisfaction guarantee:</p>
-        <ul>
-          <li>Complete the first 3 topics</li>
-          <li>If not satisfied, we'll refund 100% of your payment</li>
-          <li>No questions asked - we believe in the quality of our program</li>
-        </ul>
-        <p>Over 95% of students continue after the trial period.</p>
-      </div>
-    </div> -->
-  </div>
-</section>
-
-  <!-- Pricing Section -->
-<section id="pricing">
-  <div class="container">
-    <h2>PRICING PLANS</h2>
-    <p style="text-align: center; margin-bottom: 30px; max-width: 700px; margin-left: auto; margin-right: auto;">
-      Choose the plan that fits your goals. Both options include lifetime access to course materials.
-    </p>
-    
-    <div class="pricing-plans">
-      <div class="pricing-card animate" style="animation-delay: 0.2s;">
-        <h3>STARTER</h3>
-        <div class="price">
-          <span class="old-price">₦100,000</span>
-          <span class="new-price">₦49,999</span>
-        </div>
-        <ul class="pricing-features">
-          <li>Full course access</li>
-          <li>Licensed Software</li>
-          <li>Access to my WA DM</li>
-          <li>Community access</li>
-          <li>Extra coaching at ₦15,000/30min</li>
-        </ul>
-        <button class="btn-gold" onclick="showPaymentModal(4999900, 'Starter Plan')">
-  CHOOSE STARTER
-</button>
-      </div>
-      
-      <div class="pricing-card popular animate" style="animation-delay: 0.4s;">
-        <h3>ELITE</h3>
-        <div class="price">
-          <span class="old-price">₦150,000</span>
-          <span class="new-price">₦74,999</span>
-        </div>
-        <ul class="pricing-features">
-          <li>Everything in Starter</li>
-          <li>30-min free private session</li>
-          <li>Portfolio review</li>
-          <li>Priority feedback</li>
-          <li>Extra coaching at ₦10,000/30min</li>
-        </ul>
-        <button class="btn-gold" onclick="showPaymentModal(7499900, 'Elite Plan')">
-  CHOOSE ELITE
-</button>
-      </div>
-    </div>
-    
-    <div class="payment-security" style="text-align: center; margin-top: 40px;">
-      <p style="color: var(--gold-secondary);">
-        <i class="fas fa-lock" style="margin-right: 8px;"></i>
-        Secure payments processed by Paystack
-      </p>
-      <div style="display: flex; justify-content: center; gap: 20px; margin-top: 15px;">
-        <i class="fab fa-cc-visa" style="font-size: 1.8rem;"></i>
-        <i class="fab fa-cc-mastercard" style="font-size: 1.8rem;"></i>
-        <i class="fas fa-mobile-alt" style="font-size: 1.8rem;"></i>
-      </div>
-    </div>
-  </div>
-</section>
-
-  <!-- Footer -->
-  <footer id="contact">
-    <div class="container">
-      <div class="social-links">
-        <a href="#"><i class="fab fa-instagram"></i></a>
-        <a href="#"><i class="fab fa-youtube"></i></a>
-        <a href="#"><i class="fab fa-tiktok"></i></a>
-        <a href="#"><i class="fab fa-whatsapp"></i></a>
-      </div>
-      <p class="copyright">© 2025 Actual Lawal Animation. All rights reserved. Powered by PixelPunch Ltd.</p>
-    </div>
-  </footer>
-
-  <script>
-    // Mobile menu toggle
-    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-    const navLinks = document.getElementById('navLinks');
-    
-    mobileMenuBtn.addEventListener('click', () => {
-      navLinks.classList.toggle('active');
-    });
-    
-    // Close mobile menu when clicking a link
-    document.querySelectorAll('.nav-links a').forEach(link => {
-      link.addEventListener('click', () => {
-        navLinks.classList.remove('active');
-      });
-    });
-    
-    // FAQ accordion
-    const faqItems = document.querySelectorAll('.faq-item');
-    
-    faqItems.forEach(item => {
-      const question = item.querySelector('.faq-question');
-      
-      question.addEventListener('click', () => {
-        // Close all other items
-        faqItems.forEach(otherItem => {
-          if (otherItem !== item) {
-            otherItem.classList.remove('active');
-          }
-        });
-        
-        // Toggle current item
-        item.classList.toggle('active');
-      });
-    });
-
-    // Animate on scroll
-    const animateElements = () => {
-      const elements = document.querySelectorAll('.animate');
-      const windowHeight = window.innerHeight;
-      
-      elements.forEach(element => {
-        const elementPosition = element.getBoundingClientRect().top;
-        const elementVisible = 150;
-        
-        if (elementPosition < windowHeight - elementVisible) {
-          element.style.opacity = '1';
-          element.style.transform = 'translateY(0)';
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actual Lawal - Learn 2D Animation. Turn It Into Income.</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #10b981;
+            --primary-dark: #059669;
+            --secondary: #3b82f6;
+            --secondary-dark: #2563eb;
+            --accent: #ef4444;
+            --accent-dark: #dc2626;
+            --dark-bg: #111827;
+            --dark-card: #1f2937;
+            --dark-text: #f9fafb;
+            --gray-text: #d1d5db;
+            --light-border: #374151;
+            --warning: #f59e0b;
         }
-      });
-    };
-    
-    window.addEventListener('scroll', animateElements);
-    animateElements(); // Trigger on load
-    
-    // Payment modal functions
-const paymentModal = document.getElementById('paymentModal');
-const closeModal = document.getElementById('closeModal');
-const modalPlanTitle = document.getElementById('modalPlanTitle');
-const paymentForm = document.getElementById('paymentForm');
-
-function showPaymentModal(amount, planName) {
-  modalPlanTitle.textContent = `Complete Your Enrollment - ${planName}`;
-  paymentModal.style.display = 'flex'; // Show the modal
-  setTimeout(() => {
-    paymentModal.classList.add('show'); // Add show class for opacity transition
-  }, 10);
-  document.body.style.overflow = 'hidden';
-  
-  // Reset form state
-  paymentForm.style.display = 'flex';
-  document.getElementById('paymentProcessing').style.display = 'none';
-  document.getElementById('paymentSuccess').style.display = 'none';
-  
-  // Store the selected plan details in the form
-  paymentForm.dataset.amount = amount;
-  paymentForm.dataset.plan = planName;
-}
-
-closeModal.addEventListener('click', () => {
-  paymentModal.classList.remove('show');
-  setTimeout(() => {
-    paymentModal.style.display = 'none';
-  }, 300); // Wait for opacity transition
-  document.body.style.overflow = 'auto';
-});
-
-window.addEventListener('click', (e) => {
-  if (e.target === paymentModal) {
-    paymentModal.classList.remove('show');
-    setTimeout(() => {
-      paymentModal.style.display = 'none';
-    }, 300); // Wait for opacity transition
-    document.body.style.overflow = 'auto';
-  }
-});
-
-
-// Payment form submission - REMOVE THE DUPLICATE ONE
-paymentForm.addEventListener('submit', function(e) {
-  e.preventDefault();
-  
-  // Show processing state
-  document.getElementById('paymentProcessing').style.display = 'block';
-  paymentForm.style.display = 'none';
-  
-  const email = document.getElementById('email').value;
-  const name = document.getElementById('name').value;
-  const phone = document.getElementById('phone').value;
-  const amount = this.dataset.amount;
-  const plan = this.dataset.plan;
-  
-  // Validate inputs
-  if (!email || !name || !phone) {
-    alert('Please fill in all required fields');
-    document.getElementById('paymentProcessing').style.display = 'none';
-    paymentForm.style.display = 'flex';
-    return;
-  }
-
-  // Initialize Paystack
-  const handler = PaystackPop.setup({
-    key: 'pk_live_bab837f46c02f8acfd170f322780645bd132f5fe', // Your Paystack public key
-    email: email,
-    amount: amount,
-    currency: 'NGN',
-    ref: 'GB-' + Math.floor(Math.random() * 1000000000 + 1),
-    firstname: name.split(' ')[0],
-    lastname: name.split(' ')[1] || '',
-    metadata: {
-      custom_fields: [
-        {
-          display_name: "Phone Number",
-          variable_name: "phone",
-          value: phone
-        },
-        {
-          display_name: "Plan",
-          variable_name: "plan",
-          value: plan
-        }
-      ]
-    },
-    callback: function(response) {
-      // Payment successful
-      document.getElementById('paymentProcessing').style.display = 'none';
-      document.getElementById('paymentSuccess').style.display = 'block';
-      
-      // You would typically verify this payment on your server here
-      console.log('Payment complete! Reference: ' + response.reference);
-      
-      // Close modal after 3 seconds
-      setTimeout(() => {
-        paymentModal.classList.remove('show');
-        setTimeout(() => {
-          paymentModal.style.display = 'none';
-          document.body.style.overflow = 'auto';
-        }, 300);
-        paymentForm.style.display = 'flex';
-        document.getElementById('paymentSuccess').style.display = 'none';
-        paymentForm.reset();
-      }, 3000);
-    },
-    onClose: function() {
-      // Payment window closed
-      document.getElementById('paymentProcessing').style.display = 'none';
-      paymentForm.style.display = 'flex';
-      alert('Payment window closed. You can complete your payment later.');
-    }
-  });
-  
-  handler.openIframe();
-});
-  
-      
-      // In a real implementation, you would process payment here
-      // This is a mock implementation using Paystack's test mode
-    //   const handler = PaystackPop.setup({
-    //     key: 'pk_test_3fe70f42dfb8c3d8dc51378fc21f0367a612ac41', // Replace with your Paystack public key
-    //     email: email,
-    //     amount: amount,
-    //     currency: 'NGN',
-    //     ref: 'GB-' + Math.floor(Math.random() * 1000000000 + 1),
-    //     firstname: name.split(' ')[0],
-    //     lastname: name.split(' ')[1] || '',
-    //     metadata: {
-    //       custom_fields: [
-    //         {
-    //           display_name: "Phone Number",
-    //           variable_name: "phone",
-    //           value: phone
-    //         },
-    //         {
-    //           display_name: "Plan",
-    //           variable_name: "plan",
-    //           value: plan
-    //         }
-    //       ]
-    //     },
-    //     callback: function(response) {
-    //       alert('Payment complete! Reference: ' + response.reference);
-    //       paymentModal.style.display = 'none';
-    //       document.body.style.overflow = 'auto';
-    //     },
-    //     onClose: function() {
-    //       alert('Payment window closed.');
-    //     }
-    //   });
-      
-    //   handler.openIframe();
-    // });
-    
-    // Tooltip for doodles
-    const doodles = document.querySelectorAll('.doodle-star');
-    doodles.forEach(doodle => {
-      doodle.classList.add('tooltip');
-      const tooltip = document.createElement('span');
-      tooltip.className = 'tooltiptext';
-      tooltip.textContent = 'Hand-drawn animation elements make your work stand out!';
-      doodle.appendChild(tooltip);
-    });
-
-    // Reels Section Functionality
-    document.addEventListener('DOMContentLoaded', function() {
-      const reelsContainer = document.getElementById('reelsContainer');
-      const prevBtn = document.getElementById('prevReel');
-      const nextBtn = document.getElementById('nextReel');
-      const pagination = document.getElementById('reelsPagination');
-      const reels = document.querySelectorAll('.reel-embed');
-      
-      // Create pagination dots
-      if (reelsContainer && pagination) {
-        reels.forEach((_, index) => {
-          const dot = document.createElement('div');
-          dot.classList.add('reel-dot');
-          if (index === 0) dot.classList.add('active');
-          dot.addEventListener('click', () => {
-            scrollToReel(index);
-          });
-          pagination.appendChild(dot);
-        });
-      }
-
-      const dots = document.querySelectorAll('.reel-dot');
-      
-      // Scroll to specific reel
-      function scrollToReel(index) {
-        const reel = reels[index];
-        reelsContainer.scrollTo({
-          left: reel.offsetLeft - reelsContainer.offsetLeft,
-          behavior: 'smooth'
-        });
-        updateActiveDot(index);
-      }
-      
-      // Update active dot
-      function updateActiveDot(index) {
-        dots.forEach((dot, i) => {
-          dot.classList.toggle('active', i === index);
-        });
-      }
-      
-      // Navigation buttons
-      if (prevBtn && nextBtn) {
-        prevBtn.addEventListener('click', () => {
-          const currentScroll = reelsContainer.scrollLeft;
-          const reelWidth = reels[0].offsetWidth + 20; // include gap
-          reelsContainer.scrollTo({
-            left: currentScroll - reelWidth,
-            behavior: 'smooth'
-          });
-        });
         
-        nextBtn.addEventListener('click', () => {
-          const currentScroll = reelsContainer.scrollLeft;
-          const reelWidth = reels[0].offsetWidth + 20; // include gap
-          reelsContainer.scrollTo({
-            left: currentScroll + reelWidth,
-            behavior: 'smooth'
-          });
-        });
-      }
-      
-      // Update active dot on scroll
-      if (reelsContainer) {
-        reelsContainer.addEventListener('scroll', () => {
-          const containerWidth = reelsContainer.offsetWidth;
-          const scrollPosition = reelsContainer.scrollLeft;
-          
-          reels.forEach((reel, index) => {
-            const reelPosition = reel.offsetLeft - reelsContainer.offsetLeft;
-            if (Math.abs(reelPosition - scrollPosition) < containerWidth / 2) {
-              updateActiveDot(index);
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+        }
+        
+        body {
+            background-color: var(--dark-bg);
+            color: var(--dark-text);
+            line-height: 1.6;
+            font-size: 16px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        section {
+            padding: 60px 0;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+        
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+        
+        h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+        
+        p {
+            margin-bottom: 20px;
+            color: var(--gray-text);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 4px;
+            background: var(--primary);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+        
+        /* Header */
+        header {
+            padding: 20px 0;
+            border-bottom: 1px solid var(--light-border);
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-align: center;
+        }
+        
+        .tagline {
+            text-align: center;
+            font-size: 1.1rem;
+            color: var(--gray-text);
+            margin-top: 5px;
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding: 80px 0 60px;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            color: var(--primary);
+        }
+        
+        .hero-subtitle {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto 40px;
+        }
+        
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 16px 32px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            text-align: center;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(16, 185, 129, 0.2);
+        }
+        
+        .btn-secondary {
+            background-color: var(--secondary);
+            color: white;
+        }
+        
+        .btn-secondary:hover {
+            background-color: var(--secondary-dark);
+            transform: translateY(-3px);
+        }
+        
+        .btn-accent {
+            background-color: var(--accent);
+            color: white;
+        }
+        
+        .btn-accent:hover {
+            background-color: var(--accent-dark);
+            transform: translateY(-3px);
+        }
+        
+        .btn-block {
+            display: block;
+            width: 100%;
+            margin-top: 20px;
+        }
+        
+        /* Notice */
+        .notice {
+            background-color: rgba(245, 158, 11, 0.1);
+            border-left: 4px solid var(--warning);
+            padding: 20px;
+            margin: 40px auto;
+            border-radius: 0 8px 8px 0;
+            max-width: 800px;
+        }
+        
+        .notice-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+            color: var(--warning);
+        }
+        
+        /* What You'll Learn */
+        .learn-items {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .learn-item {
+            background-color: var(--dark-card);
+            padding: 25px;
+            border-radius: 10px;
+            border-left: 4px solid var(--primary);
+        }
+        
+        .learn-item i {
+            color: var(--primary);
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+        
+        /* Pricing */
+        .pricing-plans {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .pricing-card {
+            background-color: var(--dark-card);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--light-border);
+            transition: transform 0.3s ease;
+        }
+        
+        .pricing-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .pricing-card.popular {
+            border: 2px solid var(--secondary);
+            position: relative;
+        }
+        
+        .popular-badge {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: var(--secondary);
+            color: white;
+            padding: 6px 20px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        
+        .pricing-header {
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .pricing-name {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        .price {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin: 15px 0;
+        }
+        
+        .plan-code {
+            font-size: 0.9rem;
+            color: var(--gray-text);
+            background-color: rgba(255, 255, 255, 0.05);
+            padding: 5px 10px;
+            border-radius: 4px;
+            display: inline-block;
+        }
+        
+        .pricing-features {
+            padding: 30px;
+            border-top: 1px solid var(--light-border);
+        }
+        
+        .pricing-features ul {
+            list-style: none;
+        }
+        
+        .pricing-features li {
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .pricing-features li:last-child {
+            border-bottom: none;
+        }
+        
+        .pricing-features li i {
+            color: var(--primary);
+        }
+        
+        /* Delivery */
+        .delivery-info {
+            background-color: var(--dark-card);
+            padding: 30px;
+            border-radius: 10px;
+            max-width: 800px;
+            margin: 40px auto 0;
+        }
+        
+        .delivery-steps {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            margin-top: 25px;
+        }
+        
+        .step {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+        }
+        
+        .step-number {
+            background-color: var(--primary);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+        
+        /* Support */
+        .support {
+            text-align: center;
+            background-color: var(--dark-card);
+            padding: 30px;
+            border-radius: 10px;
+            margin-top: 40px;
+        }
+        
+        .whatsapp-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background-color: #25D366;
+            color: white;
+            padding: 15px 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 20px;
+            transition: background-color 0.3s;
+        }
+        
+        .whatsapp-link:hover {
+            background-color: #128C7E;
+        }
+        
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            border-top: 1px solid var(--light-border);
+            margin-top: 60px;
+        }
+        
+        .copyright {
+            color: var(--gray-text);
+            font-size: 0.9rem;
+            margin-top: 20px;
+        }
+        
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
             }
-          });
-        });
-      }
-      
-      // Play on click functionality
-      reels.forEach(reel => {
-        const overlay = reel.querySelector('.reel-overlay');
-        const iframe = reel.querySelector('iframe');
-        
-        overlay.addEventListener('click', () => {
-          reel.classList.add('playing');
-          // Extract video ID from iframe src
-          const src = iframe.src;
-          const videoId = src.match(/embed\/([^\?]+)/)[1];
-          // Update iframe src to autoplay
-          iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&loop=1&playlist=${videoId}&controls=0&modestbranding=1&rel=0`;
-        });
-      });
-    });
+            
+            h2 {
+                font-size: 1.7rem;
+            }
+            
+            section {
+                padding: 40px 0;
+            }
+            
+            .pricing-plans {
+                grid-template-columns: 1fr;
+            }
+            
+            .learn-items {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .step {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+        }
 
-    // Countdown Timer with Debugging
-function initializeCountdown() {
-  console.log("Initializing countdown timer...");
-  
-  // Get all required elements
-  const daysEl = document.getElementById('days');
-  const hoursEl = document.getElementById('hours');
-  const minutesEl = document.getElementById('minutes');
-  const secondsEl = document.getElementById('seconds');
-  const countdownTitle = document.querySelector('.countdown-section h3');
-  const countdownTimer = document.querySelector('.countdown-timer');
+        .payment-note {
+    font-size: 0.9rem;
+    color: var(--gray-text);
+    margin-top: 5px;
+}
 
-  // Debug: Log element status
-  console.log({
-    daysEl: daysEl ? "Found" : "Missing",
-    hoursEl: hoursEl ? "Found" : "Missing",
-    minutesEl: minutesEl ? "Found" : "Missing",
-    secondsEl: secondsEl ? "Found" : "Missing",
-    countdownTitle: countdownTitle ? "Found" : "Missing",
-    countdownTimer: countdownTimer ? "Found" : "Missing"
-  });
+.payment-info {
+    font-size: 0.85rem;
+    text-align: center;
+    margin-top: 10px;
+    color: var(--gray-text);
+    opacity: 0.8;
+}
 
-  // Verify all elements exist
-  if (!daysEl || !hoursEl || !minutesEl || !secondsEl || !countdownTitle || !countdownTimer) {
-    console.error("❌ Error: Missing countdown elements!");
-    return false;
-  }
+.pricing-card .btn i {
+    margin-right: 8px;
+}
 
-  console.log("✅ All countdown elements found");
+.security-note {
+    background-color: rgba(16, 185, 129, 0.1);
+    border: 1px solid rgba(16, 185, 129, 0.2);
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
 
-  // Set end date (3 days from now)
-  const endDate = new Date();
-  endDate.setDate(endDate.getDate() + 3);
-  console.log("Countdown end date:", endDate);
+.security-note i {
+    color: var(--primary);
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
 
-  function updateCountdown() {
-    const now = new Date();
-    const timeLeft = endDate - now;
-    
-    // Calculate time units
-    const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
-    
-    // Update DOM
-    daysEl.textContent = days.toString().padStart(2, '0');
-    hoursEl.textContent = hours.toString().padStart(2, '0');
-    minutesEl.textContent = minutes.toString().padStart(2, '0');
-    secondsEl.textContent = seconds.toString().padStart(2, '0');
-    
-    // Check if expired
-    if (timeLeft <= 0) {
-      countdownTitle.textContent = "Offer Has Expired!";
-      countdownTimer.style.display = 'none';
-      clearInterval(timerInterval);
-      console.log("⏰ Countdown expired!");
+.security-note p {
+    margin-bottom: 0;
+    color: var(--dark-text);
+}
+
+@media (max-width: 768px) {
+    .security-note {
+        flex-direction: column;
+        text-align: center;
+        padding: 25px 20px;
     }
-  }
-
-  // Start the countdown
-  updateCountdown(); // Run immediately
-  const timerInterval = setInterval(updateCountdown, 1000);
-  console.log("🚀 Countdown timer started successfully!");
-  return true;
 }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="logo">Actual Lawal</div>
+            <div class="tagline">Learn 2D Animation. Turn It Into Income.</div>
+        </div>
+    </header>
 
-// Start when DOM is fully loaded
-if (document.readyState === 'complete' || document.readyState === 'interactive') {
-  // DOM already ready
-  setTimeout(initializeCountdown, 0);
-} else {
-  document.addEventListener('DOMContentLoaded', initializeCountdown);
-}
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Turn 2D Animation Into a Real Income Skill</h1>
+            <p class="hero-subtitle">Learn how Nigerians are using simple 2D animation skills to earn online through content, freelancing, and brand work — even if you’re starting from zero.</p>
+            <a href="#pricing" class="btn btn-primary">Choose Your Plan & Start</a>
+            
+            <!-- Important Notice -->
+            <div class="notice">
+                <div class="notice-title">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <h3>IMPORTANT NOTICE (DEVICE REQUIREMENT)</h3>
+                </div>
+                <p><strong>Windows PC is strongly recommended.</strong> Most animation tools are easier to install and run smoothly on Windows. Mac users may face setup limitations.</p>
+            </div>
+        </div>
+    </section>
 
-  </script>
+    <!-- What You'll Learn -->
+    <section id="learn">
+        <div class="container">
+            <h2 class="section-title">What You'll Learn</h2>
+            <div class="learn-items">
+                <div class="learn-item">
+                    <i class="fas fa-play-circle"></i>
+                    <h3>Animation fundamentals</h3>
+                    <p>Beginner-friendly training that starts from absolute zero. No prior experience needed.</p>
+                </div>
+                <div class="learn-item">
+                    <i class="fas fa-money-bill-wave"></i>
+                    <h3>How animation makes money</h3>
+                    <p>Practical ways Nigerians are earning with animation skills right now.</p>
+                </div>
+                <div class="learn-item">
+                    <i class="fas fa-briefcase"></i>
+                    <h3>Content & ad animation workflows</h3>
+                    <p>Step-by-step processes used by professionals for client work.</p>
+                </div>
+                <div class="learn-item">
+                    <i class="fas fa-project-diagram"></i>
+                    <h3>Practical projects you can build on</h3>
+                    <p>Real projects you can use in your portfolio to attract paying clients.</p>
+                </div>
+                <div class="learn-item">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>How to grow into paid work</h3>
+                    <p>From beginner to earning - a clear path to your first animation income.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+<section id="pricing">
+    <div class="container">
+        <h2 class="section-title">Choose Your Animation Plan</h2>
+        <div class="pricing-plans">
+            <!-- Plan 1 -->
+            <div class="pricing-card">
+                <div class="pricing-header">
+                    <div class="pricing-name"><i class="fas fa-circle" style="color:#10b981;"></i> ANIMATION START</div>
+                    <div class="price">₦50,000</div>
+                    <div class="payment-note">One-time payment</div>
+                </div>
+                <div class="pricing-features">
+                    <ul>
+                        <li><i class="fas fa-check"></i> Beginner animation training</li>
+                        <li><i class="fas fa-check"></i> Core tools & workflow</li>
+                        <li><i class="fas fa-check"></i> Practice projects</li>
+                        <li><i class="fas fa-check"></i> Student community access</li>
+                        <li><strong>Best for beginners</strong></li>
+                    </ul>
+                    <a href="https://flutterwave.com/pay/rzlnhttwydfm" class="btn btn-primary btn-block" target="_blank">
+                        <i class="fas fa-lock"></i> Pay Now - ₦50,000
+                    </a>
+                    <p class="payment-info">Secure payment via Flutterwave</p>
+                </div>
+            </div>
+            
+            <!-- Plan 2 -->
+            <div class="pricing-card popular">
+                <div class="popular-badge">🔥 Most Popular</div>
+                <div class="pricing-header">
+                    <div class="pricing-name"><i class="fas fa-circle" style="color:#3b82f6;"></i> ANIMATION INCOME BUILDER</div>
+                    <div class="price">₦150,000</div>
+                    <div class="payment-note">One-time payment</div>
+                </div>
+                <div class="pricing-features">
+                    <ul>
+                        <li><i class="fas fa-check"></i> Everything in Animation Start, plus:</li>
+                        <li><i class="fas fa-check"></i> Advanced animation techniques</li>
+                        <li><i class="fas fa-check"></i> How animation is used for ads & content</li>
+                        <li><i class="fas fa-check"></i> Monetization guidance</li>
+                        <li><i class="fas fa-check"></i> Structured learning path</li>
+                        <li><strong>Best for people who want to earn</strong></li>
+                    </ul>
+                    <a href="https://flutterwave.com/pay/qgxdvxq3ztrs" class="btn btn-secondary btn-block" target="_blank">
+                        <i class="fas fa-lock"></i> Pay Now - ₦150,000
+                    </a>
+                    <p class="payment-info">Secure payment via Flutterwave</p>
+                </div>
+            </div>
+            
+            <!-- Plan 3 -->
+            <div class="pricing-card">
+                <div class="pricing-header">
+                    <div class="pricing-name"><i class="fas fa-circle" style="color:#ef4444;"></i> ANIMATION MENTORSHIP</div>
+                    <div class="price">₦500,000</div>
+                    <div class="payment-note">One-time payment</div>
+                </div>
+                <div class="pricing-features">
+                    <ul>
+                        <li><i class="fas fa-check"></i> Everything above, plus:</li>
+                        <li><i class="fas fa-check"></i> Direct mentorship</li>
+                        <li><i class="fas fa-check"></i> Live sessions & feedback</li>
+                        <li><i class="fas fa-check"></i> Priority support</li>
+                        <li><i class="fas fa-check"></i> Advanced income strategy</li>
+                        <li><strong>Limited slots. Best for serious commitment</strong></li>
+                    </ul>
+                    <a href="https://flutterwave.com/pay/esx3zknc1tyi" class="btn btn-accent btn-block" target="_blank">
+                        <i class="fas fa-lock"></i> Apply Now - ₦500,000
+                    </a>
+                    <p class="payment-info">Secure payment via Flutterwave</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Payment Security Note -->
+        <div class="security-note">
+            <i class="fas fa-shield-alt"></i>
+            <p><strong>Secure Payment:</strong> All payments are processed through Flutterwave's secure payment gateway. Your payment information is protected with bank-level security.</p>
+        </div>
+    </div>
+</section>
+
+    <!-- Delivery & Access -->
+    <section id="delivery">
+        <div class="container">
+            <h2 class="section-title">How It Works After Payment</h2>
+            <div class="delivery-info">
+                <p>After payment, here's exactly what happens:</p>
+                
+                <div class="delivery-steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div>
+                            <h3>Automatic Email Confirmation</h3>
+                            <p>You'll receive an email confirming your selected plan and next steps with access instructions.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div>
+                            <h3>Join Telegram Class</h3>
+                            <p>You'll be guided to our Telegram class and support channels where the real learning happens.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div>
+                            <h3>Access Private Groups</h3>
+                            <p>Additional private groups are unlocked based on your plan for networking and advanced support.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Support -->
+            <div class="support">
+                <h3>Need Help or Have Questions?</h3>
+                <p>Contact our support team directly on WhatsApp for quick assistance.</p>
+                <a href="https://wa.me/2348075640610" class="whatsapp-link" target="_blank">
+                    <i class="fab fa-whatsapp"></i>
+                    WhatsApp Support
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section id="final-cta">
+        <div class="container">
+            <div style="text-align: center; padding: 40px 20px; background-color: var(--dark-card); border-radius: 12px;">
+                <h2 style="font-size: 2.2rem; margin-bottom: 20px;">Views Don't Pay Bills. Skills Do.</h2>
+                <p style="font-size: 1.2rem; margin-bottom: 30px; max-width: 700px; margin-left: auto; margin-right: auto;">Stop watching tutorials that don't lead to income. Start building real animation skills that can earn you money.</p>
+                <a href="#pricing" class="btn btn-primary" style="padding: 18px 40px; font-size: 1.2rem;">Choose Your Plan & Start Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="logo">Actual Lawal</div>
+            <div class="tagline">Learn 2D Animation. Turn It Into Income.</div>
+            <div class="copyright">
+                © 2026 Actual Lawal. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Plan selection highlighting
+        document.querySelectorAll('.pricing-card .btn').forEach(button => {
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // Get plan name
+                const planCard = this.closest('.pricing-card');
+                const planName = planCard.querySelector('.pricing-name').textContent;
+                
+                // Show confirmation (in a real implementation, this would redirect to payment)
+                alert(`You've selected: ${planName}\n\nIn a real implementation, you would now be redirected to a secure payment page.`);
+                
+                // Scroll to top
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
 </body>
 </html>
