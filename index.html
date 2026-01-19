@@ -268,13 +268,10 @@
             margin: 15px 0;
         }
         
-        .plan-code {
+        .payment-note {
             font-size: 0.9rem;
             color: var(--gray-text);
-            background-color: rgba(255, 255, 255, 0.05);
-            padding: 5px 10px;
-            border-radius: 4px;
-            display: inline-block;
+            margin-top: 5px;
         }
         
         .pricing-features {
@@ -300,6 +297,43 @@
         
         .pricing-features li i {
             color: var(--primary);
+        }
+        
+        .payment-info {
+            font-size: 0.85rem;
+            text-align: center;
+            margin-top: 10px;
+            color: var(--gray-text);
+            opacity: 0.8;
+        }
+        
+        .pricing-card .btn i {
+            margin-right: 8px;
+        }
+        
+        .security-note {
+            background-color: rgba(16, 185, 129, 0.1);
+            border: 1px solid rgba(16, 185, 129, 0.2);
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 40px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .security-note i {
+            color: var(--primary);
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+        
+        .security-note p {
+            margin-bottom: 0;
+            color: var(--dark-text);
         }
         
         /* Delivery */
@@ -357,11 +391,25 @@
             text-decoration: none;
             font-weight: 600;
             margin-top: 20px;
-            transition: background-color 0.3s;
+            transition: all 0.3s;
         }
         
         .whatsapp-link:hover {
             background-color: #128C7E;
+            transform: translateY(-3px);
+        }
+        
+        /* WhatsApp Options */
+        .whatsapp-dynamic {
+            text-align: center;
+            margin-top: 25px;
+        }
+        
+        .whatsapp-note {
+            font-size: 0.9rem;
+            color: #9ca3af;
+            margin-top: 10px;
+            font-style: italic;
         }
         
         /* Footer */
@@ -409,58 +457,13 @@
                 align-items: center;
                 text-align: center;
             }
+            
+            .security-note {
+                flex-direction: column;
+                text-align: center;
+                padding: 25px 20px;
+            }
         }
-
-        .payment-note {
-    font-size: 0.9rem;
-    color: var(--gray-text);
-    margin-top: 5px;
-}
-
-.payment-info {
-    font-size: 0.85rem;
-    text-align: center;
-    margin-top: 10px;
-    color: var(--gray-text);
-    opacity: 0.8;
-}
-
-.pricing-card .btn i {
-    margin-right: 8px;
-}
-
-.security-note {
-    background-color: rgba(16, 185, 129, 0.1);
-    border: 1px solid rgba(16, 185, 129, 0.2);
-    padding: 20px;
-    border-radius: 10px;
-    margin-top: 40px;
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.security-note i {
-    color: var(--primary);
-    font-size: 1.5rem;
-    flex-shrink: 0;
-}
-
-.security-note p {
-    margin-bottom: 0;
-    color: var(--dark-text);
-}
-
-@media (max-width: 768px) {
-    .security-note {
-        flex-direction: column;
-        text-align: center;
-        padding: 25px 20px;
-    }
-}
     </style>
 </head>
 <body>
@@ -476,7 +479,7 @@
     <section class="hero">
         <div class="container">
             <h1>Turn 2D Animation Into a Real Income Skill</h1>
-            <p class="hero-subtitle">Learn how Nigerians are using simple 2D animation skills to earn online through content, freelancing, and brand work — even if you’re starting from zero.</p>
+            <p class="hero-subtitle">Learn how Nigerians are using simple 2D animation skills to earn online through content, freelancing, and brand work — even if you're starting from zero.</p>
             <a href="#pricing" class="btn btn-primary">Choose Your Plan & Start</a>
             
             <!-- Important Notice -->
@@ -525,87 +528,87 @@
     </section>
 
     <!-- Pricing -->
-<section id="pricing">
-    <div class="container">
-        <h2 class="section-title">Choose Your Animation Plan</h2>
-        <div class="pricing-plans">
-            <!-- Plan 1 -->
-            <div class="pricing-card">
-                <div class="pricing-header">
-                    <div class="pricing-name"><i class="fas fa-circle" style="color:#10b981;"></i> ANIMATION START</div>
-                    <div class="price">₦50,000</div>
-                    <div class="payment-note">One-time payment</div>
+    <section id="pricing">
+        <div class="container">
+            <h2 class="section-title">Choose Your Animation Plan</h2>
+            <div class="pricing-plans">
+                <!-- Plan 1 -->
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <div class="pricing-name"><i class="fas fa-circle" style="color:#10b981;"></i> ANIMATION START</div>
+                        <div class="price">₦50,000</div>
+                        <div class="payment-note">One-time payment</div>
+                    </div>
+                    <div class="pricing-features">
+                        <ul>
+                            <li><i class="fas fa-check"></i> Beginner animation training</li>
+                            <li><i class="fas fa-check"></i> Core tools & workflow</li>
+                            <li><i class="fas fa-check"></i> Practice projects</li>
+                            <li><i class="fas fa-check"></i> Student community access</li>
+                            <li><strong>Best for beginners</strong></li>
+                        </ul>
+                        <a href="https://flutterwave.com/pay/rzlnhttwydfm" class="btn btn-primary btn-block" target="_blank">
+                            <i class="fas fa-lock"></i> Pay Now - ₦50,000
+                        </a>
+                        <p class="payment-info">Secure payment via Flutterwave</p>
+                    </div>
                 </div>
-                <div class="pricing-features">
-                    <ul>
-                        <li><i class="fas fa-check"></i> Beginner animation training</li>
-                        <li><i class="fas fa-check"></i> Core tools & workflow</li>
-                        <li><i class="fas fa-check"></i> Practice projects</li>
-                        <li><i class="fas fa-check"></i> Student community access</li>
-                        <li><strong>Best for beginners</strong></li>
-                    </ul>
-                    <a href="https://flutterwave.com/pay/rzlnhttwydfm" class="btn btn-primary btn-block" target="_blank">
-                        <i class="fas fa-lock"></i> Pay Now - ₦50,000
-                    </a>
-                    <p class="payment-info">Secure payment via Flutterwave</p>
+                
+                <!-- Plan 2 -->
+                <div class="pricing-card popular">
+                    <div class="popular-badge">🔥 Most Popular</div>
+                    <div class="pricing-header">
+                        <div class="pricing-name"><i class="fas fa-circle" style="color:#3b82f6;"></i> ANIMATION INCOME BUILDER</div>
+                        <div class="price">₦150,000</div>
+                        <div class="payment-note">One-time payment</div>
+                    </div>
+                    <div class="pricing-features">
+                        <ul>
+                            <li><i class="fas fa-check"></i> Everything in Animation Start, plus:</li>
+                            <li><i class="fas fa-check"></i> Advanced animation techniques</li>
+                            <li><i class="fas fa-check"></i> How animation is used for ads & content</li>
+                            <li><i class="fas fa-check"></i> Monetization guidance</li>
+                            <li><i class="fas fa-check"></i> Structured learning path</li>
+                            <li><strong>Best for people who want to earn</strong></li>
+                        </ul>
+                        <a href="https://flutterwave.com/pay/qgxdvxq3ztrs" class="btn btn-secondary btn-block" target="_blank">
+                            <i class="fas fa-lock"></i> Pay Now - ₦150,000
+                        </a>
+                        <p class="payment-info">Secure payment via Flutterwave</p>
+                    </div>
+                </div>
+                
+                <!-- Plan 3 -->
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <div class="pricing-name"><i class="fas fa-circle" style="color:#ef4444;"></i> ANIMATION MENTORSHIP</div>
+                        <div class="price">₦500,000</div>
+                        <div class="payment-note">One-time payment</div>
+                    </div>
+                    <div class="pricing-features">
+                        <ul>
+                            <li><i class="fas fa-check"></i> Everything above, plus:</li>
+                            <li><i class="fas fa-check"></i> Direct mentorship</li>
+                            <li><i class="fas fa-check"></i> Live sessions & feedback</li>
+                            <li><i class="fas fa-check"></i> Priority support</li>
+                            <li><i class="fas fa-check"></i> Advanced income strategy</li>
+                            <li><strong>Limited slots. Best for serious commitment</strong></li>
+                        </ul>
+                        <a href="https://flutterwave.com/pay/esx3zknc1tyi" class="btn btn-accent btn-block" target="_blank">
+                            <i class="fas fa-lock"></i> Apply Now - ₦500,000
+                        </a>
+                        <p class="payment-info">Secure payment via Flutterwave</p>
+                    </div>
                 </div>
             </div>
             
-            <!-- Plan 2 -->
-            <div class="pricing-card popular">
-                <div class="popular-badge">🔥 Most Popular</div>
-                <div class="pricing-header">
-                    <div class="pricing-name"><i class="fas fa-circle" style="color:#3b82f6;"></i> ANIMATION INCOME BUILDER</div>
-                    <div class="price">₦150,000</div>
-                    <div class="payment-note">One-time payment</div>
-                </div>
-                <div class="pricing-features">
-                    <ul>
-                        <li><i class="fas fa-check"></i> Everything in Animation Start, plus:</li>
-                        <li><i class="fas fa-check"></i> Advanced animation techniques</li>
-                        <li><i class="fas fa-check"></i> How animation is used for ads & content</li>
-                        <li><i class="fas fa-check"></i> Monetization guidance</li>
-                        <li><i class="fas fa-check"></i> Structured learning path</li>
-                        <li><strong>Best for people who want to earn</strong></li>
-                    </ul>
-                    <a href="https://flutterwave.com/pay/qgxdvxq3ztrs" class="btn btn-secondary btn-block" target="_blank">
-                        <i class="fas fa-lock"></i> Pay Now - ₦150,000
-                    </a>
-                    <p class="payment-info">Secure payment via Flutterwave</p>
-                </div>
-            </div>
-            
-            <!-- Plan 3 -->
-            <div class="pricing-card">
-                <div class="pricing-header">
-                    <div class="pricing-name"><i class="fas fa-circle" style="color:#ef4444;"></i> ANIMATION MENTORSHIP</div>
-                    <div class="price">₦500,000</div>
-                    <div class="payment-note">One-time payment</div>
-                </div>
-                <div class="pricing-features">
-                    <ul>
-                        <li><i class="fas fa-check"></i> Everything above, plus:</li>
-                        <li><i class="fas fa-check"></i> Direct mentorship</li>
-                        <li><i class="fas fa-check"></i> Live sessions & feedback</li>
-                        <li><i class="fas fa-check"></i> Priority support</li>
-                        <li><i class="fas fa-check"></i> Advanced income strategy</li>
-                        <li><strong>Limited slots. Best for serious commitment</strong></li>
-                    </ul>
-                    <a href="https://flutterwave.com/pay/esx3zknc1tyi" class="btn btn-accent btn-block" target="_blank">
-                        <i class="fas fa-lock"></i> Apply Now - ₦500,000
-                    </a>
-                    <p class="payment-info">Secure payment via Flutterwave</p>
-                </div>
+            <!-- Payment Security Note -->
+            <div class="security-note">
+                <i class="fas fa-shield-alt"></i>
+                <p><strong>Secure Payment:</strong> All payments are processed through Flutterwave's secure payment gateway. Your payment information is protected with bank-level security.</p>
             </div>
         </div>
-        
-        <!-- Payment Security Note -->
-        <div class="security-note">
-            <i class="fas fa-shield-alt"></i>
-            <p><strong>Secure Payment:</strong> All payments are processed through Flutterwave's secure payment gateway. Your payment information is protected with bank-level security.</p>
-        </div>
-    </div>
-</section>
+    </section>
 
     <!-- Delivery & Access -->
     <section id="delivery">
@@ -644,11 +647,18 @@
             <!-- Support -->
             <div class="support">
                 <h3>Need Help or Have Questions?</h3>
-                <p>Contact our support team directly on WhatsApp for quick assistance.</p>
-                <a href="https://wa.me/2348075640610" class="whatsapp-link" target="_blank">
-                    <i class="fab fa-whatsapp"></i>
-                    WhatsApp Support
-                </a>
+                <p>Message us on WhatsApp for quick assistance. Your message will include which plan you're interested in.</p>
+                
+                <div class="whatsapp-dynamic">
+                    <a href="https://wa.me/2348075640610?text=Hello%20Actual!%20I'm%20interested%20in%20your%202D%20Animation%20course.%20Can%20you%20tell%20me%20more%20about%20the%20plans?" 
+                       class="whatsapp-link" 
+                       target="_blank"
+                       id="whatsapp-btn">
+                        <i class="fab fa-whatsapp"></i>
+                        Message About 2D Animation Course
+                    </a>
+                    <p class="whatsapp-note">Message will adjust based on which plan you're viewing</p>
+                </div>
             </div>
         </div>
     </section>
@@ -694,23 +704,53 @@
             });
         });
         
-        // Plan selection highlighting
+        // Smart WhatsApp button that changes based on which plan user is viewing
+        document.querySelectorAll('.pricing-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                const planName = this.querySelector('.pricing-name').textContent.trim();
+                const planPrice = this.querySelector('.price').textContent.trim();
+                const whatsappBtn = document.getElementById('whatsapp-btn');
+                
+                if (planName.includes('ANIMATION START')) {
+                    whatsappBtn.href = "https://wa.me/2348075640610?text=Hello%20Actual!%20I'm%20interested%20in%20the%20Animation%20Start%20plan%20(N50,000)%20and%20have%20questions.";
+                    whatsappBtn.innerHTML = '<i class="fab fa-whatsapp"></i> Message About Animation Start Plan';
+                } else if (planName.includes('INCOME BUILDER')) {
+                    whatsappBtn.href = "https://wa.me/2348075640610?text=Hello%20Actual!%20I'm%20interested%20in%20the%20Income%20Builder%20plan%20(N150,000)%20and%20have%20questions.";
+                    whatsappBtn.innerHTML = '<i class="fab fa-whatsapp"></i> Message About Income Builder Plan';
+                } else if (planName.includes('MENTORSHIP')) {
+                    whatsappBtn.href = "https://wa.me/2348075640610?text=Hello%20Actual!%20I'm%20interested%20in%20the%20Mentorship%20program%20(N500,000)%20and%20have%20questions.";
+                    whatsappBtn.innerHTML = '<i class="fab fa-whatsapp"></i> Message About Mentorship';
+                }
+            });
+        });
+
+        // Reset WhatsApp button when not hovering over any plan
+        document.querySelector('#pricing').addEventListener('mouseleave', function() {
+            const whatsappBtn = document.getElementById('whatsapp-btn');
+            whatsappBtn.href = "https://wa.me/2348075640610?text=Hello%20Actual!%20I'm%20interested%20in%20your%202D%20Animation%20course.%20Can%20you%20tell%20me%20more%20about%20the%20plans?";
+            whatsappBtn.innerHTML = '<i class="fab fa-whatsapp"></i> Message About 2D Animation Course';
+        });
+
+        // Also track clicks on plan buttons for WhatsApp
         document.querySelectorAll('.pricing-card .btn').forEach(button => {
-            button.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                // Get plan name
+            button.addEventListener('click', function() {
                 const planCard = this.closest('.pricing-card');
-                const planName = planCard.querySelector('.pricing-name').textContent;
+                const planName = planCard.querySelector('.pricing-name').textContent.trim();
+                const whatsappBtn = document.getElementById('whatsapp-btn');
                 
-                // Show confirmation (in a real implementation, this would redirect to payment)
-                alert(`You've selected: ${planName}\n\nIn a real implementation, you would now be redirected to a secure payment page.`);
+                if (planName.includes('ANIMATION START')) {
+                    whatsappBtn.href = "https://wa.me/2348075640610?text=Hello%20Actual!%20I%20just%20tried%20to%20pay%20for%20Animation%20Start%20(N50,000)%20and%20need%20help.";
+                    whatsappBtn.innerHTML = '<i class="fab fa-whatsapp"></i> Need Help with Animation Start Payment';
+                } else if (planName.includes('INCOME BUILDER')) {
+                    whatsappBtn.href = "https://wa.me/2348075640610?text=Hello%20Actual!%20I%20just%20tried%20to%20pay%20for%20Income%20Builder%20(N150,000)%20and%20need%20help.";
+                    whatsappBtn.innerHTML = '<i class="fab fa-whatsapp"></i> Need Help with Income Builder Payment';
+                } else if (planName.includes('MENTORSHIP')) {
+                    whatsappBtn.href = "https://wa.me/2348075640610?text=Hello%20Actual!%20I%20just%20tried%20to%20apply%20for%20Mentorship%20(N500,000)%20and%20need%20help.";
+                    whatsappBtn.innerHTML = '<i class="fab fa-whatsapp"></i> Need Help with Mentorship Application';
+                }
                 
-                // Scroll to top
-                window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth'
-                });
+                // The payment link will open in new tab, but we've updated WhatsApp for if they need help
+                return true;
             });
         });
     </script>
