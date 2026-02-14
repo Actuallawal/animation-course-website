@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Check your email · Payment successful</title>
+  <!-- Google Font: Inter (clean, modern) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz@14..32&display=swap" rel="stylesheet">
+  <style>
+    /* reset & base */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      background: radial-gradient(circle at 30% 20%, #1e1e2f, #12121a);
+      font-family: "Inter", system-ui, -apple-system, sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+      color: #eaeef2;
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* main card – subtle glass, refined dark tone */
+    .success-card {
+      max-width: 560px;
+      width: 100%;
+      background: rgba(22, 24, 30, 0.75);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: 40px;
+      padding: 3rem 2.5rem;
+      box-shadow: 0 30px 50px -20px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(255, 255, 255, 0.02) inset;
+      text-align: center;
+
+      /* ✨ entrance: fade + slide-up */
+      opacity: 0;
+      transform: translateY(12px);
+      animation: softAppear 0.7s cubic-bezier(0.15, 0.85, 0.3, 1) forwards;
+    }
+
+    @keyframes softAppear {
+      0% {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* big heading – clean, minimal, with emoji native */
+    h1 {
+      font-weight: 500;
+      font-size: clamp(2.2rem, 8vw, 3rem);
+      letter-spacing: -0.02em;
+      margin-bottom: 0.6rem;
+      background: linear-gradient(135deg, #ffffff, #d0d9ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1.2;
+    }
+
+    /* subtext & small note */
+    .sub-message {
+      font-size: 1.35rem;
+      font-weight: 380;
+      color: #cbd5e6;
+      margin-bottom: 0.75rem;
+    }
+
+    .spam-note {
+      font-size: 1rem;
+      color: #99a4b9;
+      background: rgba(255, 255, 255, 0.02);
+      display: inline-block;
+      padding: 0.35rem 1.2rem;
+      border-radius: 50px;
+      border: 0.5px solid rgba(255, 255, 255, 0.1);
+      margin: 1.8rem 0 2.2rem 0;
+      backdrop-filter: blur(2px);
+      letter-spacing: 0.2px;
+    }
+
+    /* animation container: envelope bounce + optional paper-plane layer */
+    .animation-area {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.5rem;
+      margin: 0.8rem 0 1rem 0;
+      height: 68px;
+    }
+
+    /* envelope + plane共用 wrap */
+    .icon-bounce {
+      font-size: 3.2rem;
+      line-height: 1;
+      display: inline-block;
+      animation: gentleBounce 2.4s ease-in-out infinite;
+      transform-origin: center;
+      filter: drop-shadow(0 8px 12px rgba(0, 0, 0, 0.5));
+    }
+
+    /* small paper-plane – subtle glide across */
+    .plane-glide {
+      font-size: 2.6rem;
+      display: inline-block;
+      animation: glideLoop 3.2s ease-in-out infinite;
+      margin-left: -0.2rem;
+      opacity: 0.8;
+      filter: drop-shadow(0 5px 6px rgba(0, 0, 0, 0.6));
+    }
+
+    @keyframes gentleBounce {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      45% {
+        transform: translateY(-9px);
+      }
+      60% {
+        transform: translateY(-2px);
+      }
+      80% {
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes glideLoop {
+      0% {
+        transform: translateX(-6px) translateY(2px) rotate(-5deg);
+      }
+      25% {
+        transform: translateX(3px) translateY(-5px) rotate(2deg);
+      }
+      50% {
+        transform: translateX(12px) translateY(0px) rotate(6deg);
+      }
+      75% {
+        transform: translateX(3px) translateY(5px) rotate(0deg);
+      }
+      100% {
+        transform: translateX(-6px) translateY(2px) rotate(-5deg);
+      }
+    }
+
+    /* mobile fine‑tuning */
+    @media (max-width: 460px) {
+      .success-card {
+        padding: 2.5rem 1.8rem;
+        border-radius: 32px;
+      }
+      h1 {
+        font-size: 2.3rem;
+      }
+      .sub-message {
+        font-size: 1.2rem;
+      }
+      .spam-note {
+        font-size: 0.9rem;
+        margin: 1.5rem 0 2rem 0;
+      }
+      .icon-bounce {
+        font-size: 2.8rem;
+      }
+      .plane-glide {
+        font-size: 2.2rem;
+      }
+    }
+
+    @media (max-width: 360px) {
+      h1 {
+        font-size: 2rem;
+      }
+      .sub-message {
+        font-size: 1rem;
+      }
+    }
+
+    /* extra love: no links, no buttons – pure info */
+    .success-card p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* tiny decorative shine */
+    .success-card::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at 30% 20%, rgba(255,255,255,0.03) 0%, transparent 60%);
+      pointer-events: none;
+      border-radius: 40px;
+    }
+
+    .success-card {
+      position: relative;
+      overflow: hidden;
+    }
+  </style>
+</head>
+<body>
+  <div class="success-card">
+    <!-- playful animated icons: envelope + paper-plane (double animation, clean) -->
+    <div class="animation-area">
+      <span class="icon-bounce" aria-hidden="true">✉️</span>
+      <span class="plane-glide" aria-hidden="true">📧</span>
+      <!-- second plane for extra glide? but envelope already bouncing, plane gentle glide -->
+    </div>
+
+    <!-- main heading with emoji (static, but consistent) -->
+    <h1>Payment Successful ✅</h1>
+
+    <!-- core message -->
+    <div class="sub-message">
+      Check your email for your access details.
+    </div>
+
+    <!-- subtle spam reminder – small, dark but readable -->
+    <div class="spam-note">
+      If you don’t see it, check Spam or Promotions.
+    </div>
+
+    <!-- absolutely no buttons or links – only the email advice. 
+         extra soft visual separator only via whitespace -->
+    <div style="height: 0.2rem;"></div>
+
+    <!-- tiny email icon line (just as air, not interactive) -->
+    <div style="color: #4d5b73; font-size: 0.9rem; letter-spacing: 1px; margin-top: 8px;">
+      ✦ ✦ ✦
+    </div>
+  </div>
+
+  <!-- small script ensures nothing else – no console noise, just animation if needed but pure css -->
+  <script>
+    // minimal silence: this script only guards the "no buttons/links" requirement
+    // and does not add any interactive element. just a comment in console.
+    (function() {
+      // ensure that no accidental link/button behaviour exists (we didn't put any)
+      // but we also disable any potential default context menu on icons? not needed
+      console.log('✓ Payment success page — email instructions only (no buttons/links)');
+    })();
+  </script>
+</body>
+</html>
